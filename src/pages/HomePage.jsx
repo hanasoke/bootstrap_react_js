@@ -9,9 +9,9 @@ const HomePage = () => {
       {/* Hero Section */}
       <header className="bg-primary text-white text-center py-5">
         <div className="container">
-          <h1 className="display-4 fw-bold">Selamat Datang di Website Pertamaku!</h1>
+          <h1 className="display-4 fw-bold">Selamat Datang di Website Hanagakure</h1>
           <p className="lead fs-3">
-            Dibuat dengan React.js dan Bootstrap
+            Tempat Ngekost Nomor 1 Di Indonesia 
           </p>
           <div className="mt-4">
             <button className="btn btn-light btn-lg me-2">Mulai</button>
@@ -27,10 +27,12 @@ const HomePage = () => {
             <div className="col-lg-4 mb-4">
               <div className="card h-100 shadow-sm">
                 <div className="card-body">
-                  <div className="display-1 text-primary mb-3">⚛️</div>
-                  <h3 className="card-title">React.js</h3>
+                  <div className="display-1 text-primary mb-3">
+                    <img src="/icons/funding.png" alt="Funding" width="100"/>
+                  </div>
+                  <h3 className="card-title">Affordable</h3>
                   <p className="card-text">
-                    Menggunakan React versi terbaru dengan performa tinggi dan komponen yang reusable.
+                    Biaya Ngekost Hanya 1.300 Rupiah Per Jam 
                   </p>
                 </div>
               </div>
@@ -39,10 +41,12 @@ const HomePage = () => {
             <div className="col-lg-4 mb-4">
               <div className="card h-100 shadow-sm">
                 <div className="card-body">
-                  <div className="display-1 text-primary mb-3">🎨</div>
-                  <h3 className="card-title">Bootstrap 5</h3>
+                  <div className="display-1 text-primary mb-3">
+                    <img src="/icons/convenient.png" alt="Convenient" width="100"/>
+                  </div>
+                  <h3 className="card-title">Comfortable</h3>
                   <p className="card-text">
-                    Desain responsif dan modern dengan framework CSS terpopuler.
+                    Rasakan kenyamanannya seperti tinggal dirumah sendiri
                   </p>
                 </div>
               </div>
@@ -51,10 +55,12 @@ const HomePage = () => {
             <div className="col-lg-4 mb-4">
               <div className="card h-100 shadow-sm">
                 <div className="card-body">
-                  <div className="display-1 text-primary mb-3">⚡</div>
-                  <h3 className="card-title">Vite</h3>
+                  <div className="display-1 text-primary mb-3">
+                    <img src="/icons/park.png" alt="Convenient" width="100"/>
+                  </div>
+                  <h3 className="card-title">Free Open Space</h3>
                   <p className="card-text">
-                    Build tool super cepat untuk pengembangan React yang optimal.
+                    Rasakan sinar matahari di space terbuka yang sudah disediakan
                   </p>
                 </div>
               </div>

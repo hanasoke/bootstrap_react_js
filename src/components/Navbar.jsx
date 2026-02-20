@@ -3,7 +3,7 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
       <div className="container">
         <a className="navbar-brand" href="/">
-          <strong>MyReactApp</strong>
+          <strong>Hanagakure</strong>
         </a>
         <button 
           className="navbar-toggler" 
