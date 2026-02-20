@@ -2,10 +2,12 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 
 const HomePage = () => {
+  // Mendapatkan tahun saat ini 
+  const currentYear = new Date().getFullYear()
+
   return (
-    <>
+    <div>
       <Navbar />
-      
       {/* Hero Section */}
       <header className="bg-primary text-white text-center py-5">
         <div className="container">
@@ -102,14 +104,14 @@ const HomePage = () => {
       <footer className="bg-dark text-white text-center py-4">
         <div className="container">
           <p className="mb-0">
-            &copy; 2024 MyReactApp. Dibuat dengan ❤️ menggunakan React & Bootstrap
+            &copy; {currentYear} Hanagakure. Tempat Kost Terbaik 
           </p>
           <p className="mb-0 mt-2 small">
             React {React.version} | Bootstrap 5
           </p>
         </div>
       </footer>
-    </>
+    </div>
   )
 }
 
