@@ -77,6 +77,7 @@ const HomePage = () => {
           <div className="row text-center mb-5">
             <h1 class="text-uppercase">Daftar Kamar yang tersedia</h1>
           </div>
+          {/* First Slide */}
           <div className="row align-items-center">
             <div className="col-lg-3 mb-4">
               <div class="card">
@@ -84,7 +85,7 @@ const HomePage = () => {
                 <div class="card-body">
                   <h5 class="card-title">Kirigakure</h5>
                   <p class="card-text">Kosan seperti Desan Kirigakure</p>
-                  <a href="#" class="btn btn-primary float-end">Go somewhere</a>
+                  <a href="#" class="btn btn-primary float-end">Detail</a>
                 </div>
               </div>
             </div>
@@ -93,8 +94,8 @@ const HomePage = () => {
                 <img src="/rooms/konohagakure.png" class="card-img-top" alt="Konohagakure"/>
                 <div class="card-body">
                   <h5 class="card-title">Konohagakure</h5>
-                  <p class="card-text">Kosan seperti desa konohagakure yang menjadi pusat peradaban dunia shinobi</p>
-                  <a href="#" class="btn btn-primary float-end">Go somewhere</a>
+                  <p class="card-text">Desa yang menjadi pusat peradaban dunia shinobi</p>
+                  <a href="#" class="btn btn-primary float-end">Detail</a>
                 </div>
               </div>
             </div>
@@ -104,21 +105,66 @@ const HomePage = () => {
                 <div class="card-body">
                   <h5 class="card-title">Sunagakure</h5>
                   <p class="card-text">Desa Pasir di Dunia Naruto</p>
-                  <a href="#" class="btn btn-primary float-end">Go somewhere</a>
+                  <a href="#" class="btn btn-primary float-end">Detail</a>
                 </div>
               </div>
             </div>
             <div className="col-lg-3 mb-4">
               <div class="card">
-                <img src="#" class="card-img-top" alt="..."/>
+                <img src="/rooms/komugakure.jpg" class="card-img-top" alt="Komugakure"/>
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <h5 class="card-title">Komugakure</h5>
+                  <p class="card-text">Desa Awan Tersembunyi yang menguasai elemen petir</p>
+                  <a href="#" class="btn btn-primary float-end">Detail</a>
                 </div>
               </div>
             </div>
           </div>
+
+          {/* Second Slide */}
+          <div className="row align-items-center">
+            <div className="col-lg-3 mb-4">
+              <div class="card">
+                <img src="/rooms/iwagakure.webp" class="card-img-top" alt="Iwagakure"/>
+                <div class="card-body">
+                  <h5 class="card-title">Iwagakure</h5>
+                  <p class="card-text">Desa Batu Tersembunyi</p>
+                  <a href="#" class="btn btn-primary float-end">Detail</a>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-3 mb-4">
+              <div class="card">
+                <img src="/rooms/amegakure.webp" class="card-img-top" alt="Amegakure"/>
+                <div class="card-body">
+                  <h5 class="card-title">Amegakure</h5>
+                  <p class="card-text">Desa Hujan tersembunyi yang menjadi tempat persembunyian Pain & Akatsuki</p>
+                  <a href="#" class="btn btn-primary float-end">Detail</a>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-3 mb-4">
+              <div class="card">
+                <img src="/rooms/otogakure.webp" class="card-img-top" alt="Otogakure"/>
+                <div class="card-body">
+                  <h5 class="card-title">Otogakure</h5>
+                  <p class="card-text">Desa Bunyi Tersembunyi yang didirikan oleh Orochimaru</p>
+                  <a href="#" class="btn btn-primary float-end">Detail</a>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-3 mb-4">
+              <div class="card">
+                <img src="/rooms/takigakure.webp" class="card-img-top" alt="Takigakure"/>
+                <div class="card-body">
+                  <h5 class="card-title">Takigakure</h5>
+                  <p class="card-text">Desa Air Terjun Tersembunyi</p>
+                  <a href="#" class="btn btn-primary float-end">Detail</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 
