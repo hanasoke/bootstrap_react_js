@@ -1,5 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom' // Import Link 
 import Navbar from '../components/Navbar'
+
 
 const HomePage = () => {
   // Mendapatkan tahun saat ini 
@@ -85,7 +87,7 @@ const HomePage = () => {
                 <div class="card-body">
                   <h5 class="card-title">Kirigakure</h5>
                   <p class="card-text">Kosan seperti Desan Kirigakure</p>
-                  <a href="#" class="btn btn-primary float-end">Detail</a>
+                  <Link to="/detail" class="btn btn-primary float-end">Detail</Link>
                 </div>
               </div>
             </div>
@@ -95,7 +97,7 @@ const HomePage = () => {
                 <div class="card-body">
                   <h5 class="card-title">Konohagakure</h5>
                   <p class="card-text">Desa yang menjadi pusat peradaban dunia shinobi</p>
-                  <a href="#" class="btn btn-primary float-end">Detail</a>
+                  <Link to="/detail" class="btn btn-primary float-end">Detail</Link>
                 </div>
               </div>
             </div>
@@ -105,7 +107,7 @@ const HomePage = () => {
                 <div class="card-body">
                   <h5 class="card-title">Sunagakure</h5>
                   <p class="card-text">Desa Pasir di Dunia Naruto</p>
-                  <a href="#" class="btn btn-primary float-end">Detail</a>
+                  <Link to="/detail" class="btn btn-primary float-end">Detail</Link>
                 </div>
               </div>
             </div>
@@ -115,7 +117,7 @@ const HomePage = () => {
                 <div class="card-body">
                   <h5 class="card-title">Komugakure</h5>
                   <p class="card-text">Desa Awan Tersembunyi yang menguasai elemen petir</p>
-                  <a href="#" class="btn btn-primary float-end">Detail</a>
+                  <Link to="/detail" class="btn btn-primary float-end">Detail</Link>
                 </div>
               </div>
             </div>
@@ -129,7 +131,7 @@ const HomePage = () => {
                 <div class="card-body">
                   <h5 class="card-title">Iwagakure</h5>
                   <p class="card-text">Desa Batu Tersembunyi</p>
-                  <a href="#" class="btn btn-primary float-end">Detail</a>
+                  <Link to="/detail" class="btn btn-primary float-end">Detail</Link>
                 </div>
               </div>
             </div>
@@ -139,7 +141,7 @@ const HomePage = () => {
                 <div class="card-body">
                   <h5 class="card-title">Amegakure</h5>
                   <p class="card-text">Desa Hujan tersembunyi yang menjadi tempat persembunyian Pain & Akatsuki</p>
-                  <a href="#" class="btn btn-primary float-end">Detail</a>
+                  <Link to="/detail" class="btn btn-primary float-end">Detail</Link>
                 </div>
               </div>
             </div>
@@ -149,7 +151,7 @@ const HomePage = () => {
                 <div class="card-body">
                   <h5 class="card-title">Otogakure</h5>
                   <p class="card-text">Desa Bunyi Tersembunyi yang didirikan oleh Orochimaru</p>
-                  <a href="#" class="btn btn-primary float-end">Detail</a>
+                  <Link to="/detail" class="btn btn-primary float-end">Detail</Link>
                 </div>
               </div>
             </div>
@@ -159,7 +161,7 @@ const HomePage = () => {
                 <div class="card-body">
                   <h5 class="card-title">Takigakure</h5>
                   <p class="card-text">Desa Air Terjun Tersembunyi</p>
-                  <a href="#" class="btn btn-primary float-end">Detail</a>
+                  <Link to="/detail" class="btn btn-primary float-end">Detail</Link>
                 </div>
               </div>
             </div>
