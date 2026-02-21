@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom' // Import Link 
 import Navbar from '../components/Navbar'
 
 const DetailPage = () => {
@@ -28,8 +29,13 @@ const DetailPage = () => {
           </div>
           <div className="row">
             <div className="col">
+              <Link to="/" className="btn btn-secondary btn-lg">
+                Back
+              </Link>
+            </div>
+            <div className="col">
               <a href="#contact" className="btn btn-success btn-lg">
-                Hubungi Sekarang
+                Call Now 
               </a>
             </div>
           </div>
