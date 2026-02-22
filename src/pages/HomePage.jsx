@@ -83,7 +83,7 @@ const HomePage = () => {
           <div className="row align-items-center">
             <div className="col-lg-3 mb-4">
               <div class="card">
-                <img src="/rooms/kirigakure.jpg" class="card-img-top" alt="Kirigakure"/>
+                <img src="/rooms/1.jpg" class="card-img-top" alt="Kirigakure"/>
                 <div class="card-body">
                   <h5 class="card-title">Kirigakure</h5>
                   <p class="card-text">Kosan seperti Desan Kirigakure</p>
@@ -93,7 +93,7 @@ const HomePage = () => {
             </div>
             <div className="col-lg-3 mb-4">
               <div class="card">
-                <img src="/rooms/konohagakure.png" class="card-img-top" alt="Konohagakure"/>
+                <img src="/rooms/2.jpg" class="card-img-top" alt="Konohagakure"/>
                 <div class="card-body">
                   <h5 class="card-title">Konohagakure</h5>
                   <p class="card-text">Desa yang menjadi pusat peradaban dunia shinobi</p>
@@ -103,7 +103,7 @@ const HomePage = () => {
             </div>
             <div className="col-lg-3 mb-4">
               <div class="card">
-                <img src="/rooms/sunagakure.jpg" class="card-img-top" alt="Sunagakure"/>
+                <img src="/rooms/3.jpg" class="card-img-top" alt="Sunagakure"/>
                 <div class="card-body">
                   <h5 class="card-title">Sunagakure</h5>
                   <p class="card-text">Desa Pasir di Dunia Naruto</p>
@@ -113,7 +113,7 @@ const HomePage = () => {
             </div>
             <div className="col-lg-3 mb-4">
               <div class="card">
-                <img src="/rooms/komugakure.jpg" class="card-img-top" alt="Komugakure"/>
+                <img src="/rooms/4.jpg" class="card-img-top" alt="Komugakure"/>
                 <div class="card-body">
                   <h5 class="card-title">Komugakure</h5>
                   <p class="card-text">Desa Awan Tersembunyi yang menguasai elemen petir</p>
@@ -127,7 +127,7 @@ const HomePage = () => {
           <div className="row align-items-center">
             <div className="col-lg-3 mb-4">
               <div class="card">
-                <img src="/rooms/iwagakure.webp" class="card-img-top" alt="Iwagakure"/>
+                <img src="/rooms/5.jpg" class="card-img-top" alt="Iwagakure"/>
                 <div class="card-body">
                   <h5 class="card-title">Iwagakure</h5>
                   <p class="card-text">Desa Batu Tersembunyi</p>
@@ -137,7 +137,7 @@ const HomePage = () => {
             </div>
             <div className="col-lg-3 mb-4">
               <div class="card">
-                <img src="/rooms/amegakure.webp" class="card-img-top" alt="Amegakure"/>
+                <img src="/rooms/6.jpg" class="card-img-top" alt="Amegakure"/>
                 <div class="card-body">
                   <h5 class="card-title">Amegakure</h5>
                   <p class="card-text">Desa Hujan tersembunyi yang menjadi tempat persembunyian Pain & Akatsuki</p>
@@ -147,7 +147,7 @@ const HomePage = () => {
             </div>
             <div className="col-lg-3 mb-4">
               <div class="card">
-                <img src="/rooms/otogakure.webp" class="card-img-top" alt="Otogakure"/>
+                <img src="/rooms/7.jpg" class="card-img-top" alt="Otogakure"/>
                 <div class="card-body">
                   <h5 class="card-title">Otogakure</h5>
                   <p class="card-text">Desa Bunyi Tersembunyi yang didirikan oleh Orochimaru</p>
@@ -157,7 +157,7 @@ const HomePage = () => {
             </div>
             <div className="col-lg-3 mb-4">
               <div class="card">
-                <img src="/rooms/takigakure.webp" class="card-img-top" alt="Takigakure"/>
+                <img src="/rooms/8.jpg" class="card-img-top" alt="Takigakure"/>
                 <div class="card-body">
                   <h5 class="card-title">Takigakure</h5>
                   <p class="card-text">Desa Air Terjun Tersembunyi</p>
