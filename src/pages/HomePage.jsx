@@ -83,10 +83,10 @@ const HomePage = () => {
           <div className="row align-items-center">
             <div className="col-lg-3 mb-4">
               <div class="card">
-                <img src="/rooms/1.jpg" class="card-img-top" alt="Kirigakure"/>
+                <img src="/rooms/kirigakure/main.jpg" class="card-img-top" alt="Kirigakure"/>
                 <div class="card-body">
                   <h5 class="card-title">Kirigakure</h5>
-                  <p class="card-text">Kosan seperti Desan Kirigakure</p>
+                  <p class="card-text">Kosan seperti Desa Kirigakure</p>
                   <Link to="/detail" class="btn btn-primary float-end">Detail</Link>
                 </div>
               </div>

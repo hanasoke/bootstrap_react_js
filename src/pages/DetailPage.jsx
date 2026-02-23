@@ -20,7 +20,7 @@ const DetailPage = () => {
                 Mulai Rp 1.000.000/bulan.
               </p>
               <img 
-                src="/rooms/1.jpg" 
+                src="/rooms/kirigakure/main.jpg" 
                 className="img-fluid rounded shadow mb-4" 
                 alt="Foto Kosan" 
                 style={{ maxHeight: '500px', objectFit: 'cover' }}
@@ -123,7 +123,7 @@ const DetailPage = () => {
           <div className="row g-3">
             <div className="col-md-4">
               <img 
-                src="/rooms/1.jpg" 
+                src="/rooms/kirigakure/2.jpg" 
                 className="img-fluid rounded shadow" 
                 alt="Kamar Kosan"
                 style={{ aspectRatio: '1', objectFit: 'cover' }}
@@ -131,7 +131,7 @@ const DetailPage = () => {
             </div>
             <div className="col-md-4">
               <img 
-                src="/rooms/2.jpg" 
+                src="/rooms/kirigakure/3.jpg" 
                 className="img-fluid rounded shadow" 
                 alt="Fasilitas Kosan"
                 style={{ aspectRatio: '1', objectFit: 'cover' }}
@@ -139,7 +139,7 @@ const DetailPage = () => {
             </div>
             <div className="col-md-4">
               <img 
-                src="/rooms/3.jpg" 
+                src="/rooms/kirigakure/4.jpg" 
                 className="img-fluid rounded shadow" 
                 alt="Eksterior Kosan"
                 style={{ aspectRatio: '1', objectFit: 'cover' }}

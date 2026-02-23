@@ -1,0 +1,16 @@
+{
+    "rooms": [{
+        "name": "Kirigakure",
+        "description": "Kosan seperti view desa kirigakure",
+        "price": 850000,
+        "main_image": "kirigakure/main.jpg", 
+        "image_1": "kirigakure/2.jpg",
+        "image_2": "kirigakure/3.jpg",
+        "image_3": "kirigakure/4.jpg"
+
+    }, 
+    {
+
+    }
+    ]
+}
