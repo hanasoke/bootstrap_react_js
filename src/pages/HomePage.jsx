@@ -15,7 +15,7 @@ const HomePage = () => {
         <div className="container">
           <h1 className="display-4 fw-bold">Selamat Datang di Website Hanagakure</h1>
           <p className="lead fs-3">
-            Tempat Ngekost Nomor 1 Di Indonesia 
+            Tempat Ngekost Nomor 1 Di Jakarta
           </p>
           <div className="mt-4">
             <button className="btn btn-light btn-lg me-2">Mulai</button>
@@ -93,7 +93,7 @@ const HomePage = () => {
             </div>
             <div className="col-lg-3 mb-4">
               <div class="card">
-                <img src="/rooms/2.jpg" class="card-img-top" alt="Konohagakure"/>
+                <img src="/rooms/konohagakure/main.jpg" class="card-img-top" alt="Konohagakure"/>
                 <div class="card-body">
                   <h5 class="card-title">Konohagakure</h5>
                   <p class="card-text">Desa yang menjadi pusat peradaban dunia shinobi</p>

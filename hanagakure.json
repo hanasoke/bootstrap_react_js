@@ -1,4 +1,7 @@
 {
+    "location": 
+        "South Bekasi, West Java, Indonesia"
+    ,
     "rooms": [{
         "name": "Kirigakure",
         "description": "Kosan seperti view desa kirigakure",
@@ -6,11 +9,71 @@
         "main_image": "kirigakure/main.jpg", 
         "image_1": "kirigakure/2.jpg",
         "image_2": "kirigakure/3.jpg",
-        "image_3": "kirigakure/4.jpg"
+        "image_3": "konohagakure/4.jpg"
 
     }, 
     {
-
+        "name": "Konohagakure",
+        "description": "Kosan seperti view desa kirigakure",
+        "price": 850000,
+        "main_image": "konohagakure/main.jpg", 
+        "image_1": "kirigakure/space_room.jpg",
+        "image_2": "kirigakure/sitting_room.jpg",
+        "image_3": "konohagakure/bathroom.jpg"
+    }, 
+    {
+        "name": "Sunagakure", 
+        "description": "Kosan seperti view desa kirigakure",
+        "price": 850000,
+        "main_image": "konohagakure/main.jpg", 
+        "image_1": "kirigakure/space_room.jpg",
+        "image_2": "kirigakure/sitting_room.jpg",
+        "image_3": "konohagakure/bathroom.jpg"
+    }, 
+    {
+        "name": "Komugakure", 
+        "description": "Kosan seperti view desa kirigakure",
+        "price": 850000,
+        "main_image": "konohagakure/main.jpg", 
+        "image_1": "kirigakure/space_room.jpg",
+        "image_2": "kirigakure/sitting_room.jpg",
+        "image_3": "konohagakure/bathroom.jpg"
+    }, 
+    {
+        "name": "Iwagakure", 
+        "description": "Kosan seperti view desa kirigakure",
+        "price": 850000,
+        "main_image": "konohagakure/main.jpg", 
+        "image_1": "kirigakure/space_room.jpg",
+        "image_2": "kirigakure/sitting_room.jpg",
+        "image_3": "konohagakure/bathroom.jpg"
+    }, 
+    {
+        "name": "Amegakure", 
+        "description": "Kosan seperti view desa kirigakure",
+        "price": 850000,
+        "main_image": "konohagakure/main.jpg", 
+        "image_1": "kirigakure/space_room.jpg",
+        "image_2": "kirigakure/sitting_room.jpg",
+        "image_3": "konohagakure/bathroom.jpg"
+    }, 
+    {
+        "name": "Otogakure", 
+        "description": "Kosan seperti view desa kirigakure",
+        "price": 850000,
+        "main_image": "konohagakure/main.jpg", 
+        "image_1": "kirigakure/space_room.jpg",
+        "image_2": "kirigakure/sitting_room.jpg",
+        "image_3": "konohagakure/bathroom.jpg"
+    }, 
+    {
+        "name": "Takigakure", 
+        "description": "",
+        "price": 0,
+        "main_image": "", 
+        "image_1": "",
+        "image_2": "",
+        "image_3": ""
     }
     ]
 }
