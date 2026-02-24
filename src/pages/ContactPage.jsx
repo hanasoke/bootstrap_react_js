@@ -1,6 +1,6 @@
-import React from 'react'
-import { Link } from 'react-router-dom' // Import Link 
+import React from 'react' 
 import Navbar from '../components/Navbar'
+import roomData from '../assets/hanagakure.json'
 
 const ContactPage = () => {
   const currentYear = new Date().getFullYear()
@@ -12,7 +12,7 @@ const ContactPage = () => {
       {/* Contact Section */}
       <section id="contact" className="py-5 bg-light">
         <div className="container">
-          <h2 className="text-center mb-5">Hubungi Kami</h2>
+          <h2 className="text-center mb-5">Hubungi Kami - {roomData.location}</h2>
           <div className="row justify-content-center">
             <div className="col">
               <div className="card shadow">
@@ -47,11 +47,11 @@ const ContactPage = () => {
           <div className="row mt-4">
             <div className="col-md-6">
               <h5>Alamat</h5>
-              <p>Jakarta, Indonesia<br /> Dekat Kampus UI / ITB</p>
+              <p>{roomData.location}, Indonesia<br />Dekat Sekolah TK - SMA Negeri / Swasta</p>
             </div>
             <div className="col-md-6">
               <h5>Kontak</h5>
-              <p>WhatsApp: 0812-3456-7890<br />Email: info@kosan.id</p>
+              <p>WhatsApp: 0812-3456-7890<br />Email: info@{roomData.location.toLowerCase()} .id</p>
             </div>
           </div>
         </div>
