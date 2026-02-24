@@ -1,9 +1,28 @@
 import React from 'react'
-import { Link } from 'react-router-dom' // Import Link 
+import { Link, useLocation, useParams } from 'react-router-dom' // Import Link 
 import Navbar from '../components/Navbar'
+import roomData from '../assets/hanagakure.json'
 
 const DetailPage = () => {
   const currentYear = new Date().getFullYear()
+  const location = useLocation()
+  const { roomName } = useParams()
+
+  // Ambil data room dari state (dikirim dari HomePage) atau dari params 
+  const room  = location.state?.room || 
+    roomData.rooms.find(r => r.name.toLowerCase() === roomName) || 
+    roomData.rooms[0] // Default ke kamar pertama 
+
+  if (!room) {
+    return <div>Room not found</div>
+  }
+
+  const images = [
+    room.main_image, 
+    room.image_1, 
+    room.image_2, 
+    room.image_3 
+  ].filter(img => img) // Filter out undefined images  
 
   return (
     <div>
