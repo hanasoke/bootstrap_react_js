@@ -1,21 +1,26 @@
 import React from 'react'
-import { Link } from 'react-router-dom' // Import Link 
+// Import Link
+import { Link } from 'react-router-dom'  
 import Navbar from '../components/Navbar'
-
+// Import data JSON
+import roomData from '../assets/hanagakure.json'
 
 const HomePage = () => {
   // Mendapatkan tahun saat ini 
   const currentYear = new Date().getFullYear()
 
+  const rooms = roomData.rooms // Ambil array rooms dari JSON
+
   return (
     <div>
       <Navbar />
+
       {/* Hero Section */}
       <header className="bg-primary text-white text-center py-5">
         <div className="container">
           <h1 className="display-4 fw-bold">Selamat Datang di Website Hanagakure</h1>
           <p className="lead fs-3">
-            Tempat Ngekost Nomor 1 Di Jakarta
+            Tempat Ngekost Nomor 1 Di {roomData.location}
           </p>
           <div className="mt-4">
             <button className="btn btn-light btn-lg me-2">Mulai</button>
@@ -36,7 +41,7 @@ const HomePage = () => {
                   </div>
                   <h3 className="card-title">Affordable</h3>
                   <p className="card-text">
-                    Biaya Ngekost Hanya 1.300 Rupiah Per Jam 
+                    Mulai dari Rp {Math.min(...rooms.map(r => r.price)).toLocaleString()} / Bulan 
                   </p>
                 </div>
               </div>
@@ -50,7 +55,7 @@ const HomePage = () => {
                   </div>
                   <h3 className="card-title">Comfortable</h3>
                   <p className="card-text">
-                    Rasakan kenyamanannya seperti tinggal dirumah sendiri
+                    {rooms.length} pilihan kamar nyama tersedia 
                   </p>
                 </div>
               </div>
@@ -80,91 +85,27 @@ const HomePage = () => {
             <h1 class="text-uppercase">Daftar Kamar yang tersedia</h1>
           </div>
           {/* First Slide */}
-          <div className="row align-items-center">
-            <div className="col-lg-3 mb-4">
-              <div class="card">
-                <img src="/rooms/kirigakure/main.jpg" class="card-img-top" alt="Kirigakure"/>
-                <div class="card-body">
-                  <h5 class="card-title">Kirigakure</h5>
-                  <p class="card-text">Kosan seperti Desa Kirigakure</p>
-                  <Link to="/detail" class="btn btn-primary float-end">Detail</Link>
+          <div className="row">
+            {rooms.map((room, index) =>  (
+              <div className="col-lg-3 mb-4" key={index}>
+                <div class="card h-100">
+                  <img src={`/rooms/${room.main_image}`} class="card-img-top" alt={room.name} style={{ height: '200px', objectFit: 'cover' }}/>
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">{room.name}</h5>
+                    <p class="card-text">{room.description}</p>
+                    <p class="fw-bold text-primary">
+                      {room.price.toLocaleString()}/bulan 
+                    </p>
+                    <Link 
+                      to={`/detail/${room.name.toLowerCase()}`} 
+                      state="{{ room: room }}" // Kirim data room ke halaman detail  
+                      class="btn btn-primary mt-2">
+                        Detail
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="col-lg-3 mb-4">
-              <div class="card">
-                <img src="/rooms/konohagakure/main.jpg" class="card-img-top" alt="Konohagakure"/>
-                <div class="card-body">
-                  <h5 class="card-title">Konohagakure</h5>
-                  <p class="card-text">Desa yang menjadi pusat peradaban dunia shinobi</p>
-                  <Link to="/detail" class="btn btn-primary float-end">Detail</Link>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-3 mb-4">
-              <div class="card">
-                <img src="/rooms/sunagakure/main.jpg" class="card-img-top" alt="Sunagakure"/>
-                <div class="card-body">
-                  <h5 class="card-title">Sunagakure</h5>
-                  <p class="card-text">Desa Pasir di Dunia Naruto</p>
-                  <Link to="/detail" class="btn btn-primary float-end">Detail</Link>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-3 mb-4">
-              <div class="card">
-                <img src="/rooms/komugakure/main.jpg" class="card-img-top" alt="Komugakure"/>
-                <div class="card-body">
-                  <h5 class="card-title">Komugakure</h5>
-                  <p class="card-text">Desa Awan Tersembunyi yang menguasai elemen petir</p>
-                  <Link to="/detail" class="btn btn-primary float-end">Detail</Link>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Second Slide */}
-          <div className="row align-items-center">
-            <div className="col-lg-3 mb-4">
-              <div class="card">
-                <img src="/rooms/iwagakure/main.jpg" class="card-img-top" alt="Iwagakure"/>
-                <div class="card-body">
-                  <h5 class="card-title">Iwagakure</h5>
-                  <p class="card-text">Desa Batu Tersembunyi</p>
-                  <Link to="/detail" class="btn btn-primary float-end">Detail</Link>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-3 mb-4">
-              <div class="card">
-                <img src="/rooms/amegakure/main.jpg" class="card-img-top" alt="Amegakure"/>
-                <div class="card-body">
-                  <h5 class="card-title">Amegakure</h5>
-                  <p class="card-text">Desa Hujan tersembunyi yang menjadi tempat persembunyian Pain & Akatsuki</p>
-                  <Link to="/detail" class="btn btn-primary float-end">Detail</Link>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-3 mb-4">
-              <div class="card">
-                <img src="/rooms/otogakure/main.jpg" class="card-img-top" alt="Otogakure"/>
-                <div class="card-body">
-                  <h5 class="card-title">Otogakure</h5>
-                  <p class="card-text">Desa Bunyi Tersembunyi yang didirikan oleh Orochimaru</p>
-                  <Link to="/detail" class="btn btn-primary float-end">Detail</Link>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-3 mb-4">
-              <div class="card">
-                <img src="/rooms/takigakure/main.jpg" class="card-img-top" alt="Takigakure"/>
-                <div class="card-body">
-                  <h5 class="card-title">Takigakure</h5>
-                  <p class="card-text">Desa Air Terjun Tersembunyi</p>
-                  <Link to="/detail" class="btn btn-primary float-end">Detail</Link>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
 
         </div>
