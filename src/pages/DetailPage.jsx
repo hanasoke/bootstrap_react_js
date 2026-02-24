@@ -33,16 +33,18 @@ const DetailPage = () => {
         <div className="container">
           <div className="row">
             <div className="col">
-              <h1 className="display-4 fw-bold mb-4">Kosan Strategis di Jakarta</h1>
+              <h1 className="display-4 fw-bold mb-4">{room.name}</h1>
               <p className="lead mb-4">
-                Kosan nyaman dengan fasilitas lengkap, dekat kampus dan perkantoran. 
-                Mulai Rp 1.000.000/bulan.
+                {room.description}
               </p>
+              <h3 className='text-primary mb-4'>
+                Rp {room.price.toLocaleString()}/bulan 
+              </h3>
               <img 
-                src="/rooms/kirigakure/main.jpg" 
+                src={`/rooms/${room.main_image}`} 
                 className="img-fluid rounded shadow mb-4" 
-                alt="Foto Kosan" 
-                style={{ maxHeight: '500px', objectFit: 'cover' }}
+                alt="{room.name}" 
+                style={{ objectFit: 'cover', width: '100%' }}
               />
             </div>
           </div>
@@ -61,10 +63,29 @@ const DetailPage = () => {
         </div>
       </section>
 
+      {/* Gallery Section */}
+      <section className="py-5 bg-light">
+        <div className="container">
+          <h2 className="text-center mb-5">Galeri {room.name}</h2>
+          <div className="row g-3">
+            {images.map((image, index) => (
+              <div className="col-md-3" key="{index}">
+                <img 
+                  src={`/rooms/${image}`} 
+                  className="img-fluid rounded shadow" 
+                  alt={`${room.name} - Image ${index + 1}`}
+                  style={{ aspectRatio: '1', objectFit: 'cover' }}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section id="features" className="py-5">
         <div className="container">
-          <h2 className="text-center mb-5">Fasilitas Lengkap</h2>
+          <h2 className="text-center mb-5">Fasilitas {room.name}</h2>
           <div className="row g-4">
             {/* WiFi */}
             <div className="col-md-4">
@@ -135,39 +156,6 @@ const DetailPage = () => {
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section className="py-5 bg-light">
-        <div className="container">
-          <h2 className="text-center mb-5">Galeri Kosan</h2>
-          <div className="row g-3">
-            <div className="col-md-4">
-              <img 
-                src="/rooms/kirigakure/2.jpg" 
-                className="img-fluid rounded shadow" 
-                alt="Kamar Kosan"
-                style={{ aspectRatio: '1', objectFit: 'cover' }}
-              />
-            </div>
-            <div className="col-md-4">
-              <img 
-                src="/rooms/kirigakure/3.jpg" 
-                className="img-fluid rounded shadow" 
-                alt="Fasilitas Kosan"
-                style={{ aspectRatio: '1', objectFit: 'cover' }}
-              />
-            </div>
-            <div className="col-md-4">
-              <img 
-                src="/rooms/kirigakure/4.jpg" 
-                className="img-fluid rounded shadow" 
-                alt="Eksterior Kosan"
-                style={{ aspectRatio: '1', objectFit: 'cover' }}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Contact Section */}
       <section id="contact" className="py-5 bg-light">
         <div className="container">
@@ -188,8 +176,8 @@ const DetailPage = () => {
                       </div>
                     </div>
                     <div className="mb-3">
-                      <label htmlFor="message" className="form-label">Pesan</label>
-                      <textarea className="form-control" id="message" rows="4"></textarea>
+                      <label htmlFor="message" className="form-label">Pesan (Tertarik dengan {room.name})</label>
+                      <textarea className="form-control" id="message" rows="4" defaultValue={`saya tertarik dengan kamar ${room.name}. Apakah masih tersedia?`}></textarea>
                     </div>
                     <button type="submit" className="btn btn-success w-100">Kirim Pesan</button>
                   </form>
@@ -200,11 +188,11 @@ const DetailPage = () => {
           <div className="row mt-4 text-center">
             <div className="col-md-6">
               <h5>Alamat</h5>
-              <p>Jakarta, Indonesia<br /> Dekat Kampus UI / ITB</p>
+              <p>{roomData.location}, Indonesia<br /> Dekat Sekolah TK - SMA Negeri / Swasta</p>
             </div>
             <div className="col-md-6">
               <h5>Kontak</h5>
-              <p>WhatsApp: 0812-3456-7890<br />Email: info@kosan.id</p>
+              <p>WhatsApp: 0812-3456-7890<br />Email: info@{roomData.location.toLowerCase()}.id</p>
             </div>
           </div>
         </div>
@@ -213,7 +201,7 @@ const DetailPage = () => {
       {/* Footer */}
       <footer className="bg-dark text-white text-center py-4">
         <div className="container">
-          <p>&copy; {currentYear} Kosan Nyaman. Semua hak dilindungi.</p>
+          <p>&copy; {currentYear} Hanagakure. Semua hak dilindungi.</p>
         </div>
       </footer>
     </div>
