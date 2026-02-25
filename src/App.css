@@ -50,3 +50,7 @@ header {
 .team-img {
   height: 250px; object-fit: cover; border-radius: 15px 15px 0 0;
 }
+
+.faq-item {
+  border-left: 4px solid lightblue;
+}

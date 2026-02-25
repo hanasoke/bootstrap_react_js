@@ -97,6 +97,51 @@ const AboutUs = () => {
                 </div>
             </section>
 
+            {/* Fax Section */}
+            <section id='faq' className='section-padding bg-light'>
+                <div className="container">
+                    <div className="text-center mb-5">
+                        <div className="display-5 fw-bold mb-3">
+                            Pertanyaan yang sering ditanyakan 
+                        </div>
+                        <p className="lead mb-0">
+                            Ini dia pertanyaan yang sudah diajukan
+                        </p>
+                        
+                    </div>
+                    <div className="row justify-content-center">
+                        <div className="col-lg-8">
+                            <div className="accordion" id="faqAccordion">
+                                <div className="accordion-item mb-3 faq-item">
+                                    <h2 className="accordion-header">
+                                        <button class="accordion-button" type='button' data-bs-toggle="collapse" data-bs-target="#faq1">
+                                            Apakah ada deposito awal yang harus diberikan ?
+                                        </button>
+                                    </h2>
+                                    <div id="faq1" className="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                        <div className="accordion-body">
+                                            Deposito awal yang diberikan sebesar 200 Ribu dan akan dikembalikan apabila masa sewa kosan habis tetapi kosan terawat dengan baik. kalau ada kerusakan pada kamar kosan maka deposito awal tidak akan diberikan. 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="accordion-item mb-3 faq-item">
+                                    <h2 className="accordion-header">
+                                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                            Apakah ada servis kosan apabila terdapat masalah ?
+                                        </button>
+                                    </h2>
+                                    <div id="faq2" className="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                        <div className="accordion-body">
+                                            Ya, anda bisa bertanya kepada customer service kami dan teknisi kami siap membantu anda dalam waktu 8 Jam Per Hari  
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Content Section */}
             <section className="py-5 bg-light">
                 <div className="container">
