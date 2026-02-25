@@ -8,9 +8,66 @@ const AboutUs = () => {
 
     const rooms = roomData.rooms 
 
+    const icon = roomData.icon 
+
     return (
         <div>
             <Navbar />
+
+            {/* About Section */}
+            <section id="about" className="section-padding bg-light">
+                <div className="container">
+                    <div className="row g-5 align-items-center">
+                        <div className="col-lg-6">
+                            <img src={`/icons/${icon}`} class="img-fluid rounded shadow" alt="About Hanagakure" />
+                        </div>
+                        <div className="col-lg-6">
+                            <h2 className="display-5 fw-bold mb-4">About Hanagakure</h2>
+                            <h3 className='mb-3'>Kami adalah penyedia kosan terbaik didaerah jatiasih / jatisari, Kota Bekasi, Jawa Barat.</h3>
+                            <div className="row g-4 mb-4">
+                                <div className="col-md-6">
+                                    <div className="d-flex align-items-center">
+                                        <i className="bi bi-check-circle-fill text-primary fs-3 me-3"></i>
+                                        <div>
+                                            <h5>Toilet didalam kamar</h5>
+                                            <p>Tidak perlu bolak - balik kamar karena toilet sudah tersedia didalam kamar.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-md-6">
+                                    <div className="d-flex align-items-center">
+                                        <i className="bi bi-check-circle-fill text-primary fs-3 me-3"></i>
+                                        <div>
+                                            <h5>Ada 8 Kamar yang tersedia</h5>
+                                            <p>8 Kamar sudah dibangun dan siap ditempati.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-md-6">
+                                    <div className="d-flex align-items-center">
+                                        <i className="bi bi-check-circle-fill text-primary fs-3 me-3"></i>
+                                        <div>
+                                            <h5>Ruang Kamar Luas</h5>
+                                            <p>Ruang Kamar luas untuk ditempati berbagai barang.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-md-6">
+                                    <div className="d-flex align-items-center">
+                                        <i className="bi bi-check-circle-fill text-primary fs-3 me-3"></i>
+                                        <div>
+                                            <h5>Mempunyai wastafel</h5>
+                                            <p>Terdapat wastafel yang dapat digunakan untuk mencuci piring, gelas, maupun peralatan dapur lainnya.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </section>
 
             {/* Content Section */}
             <section className="py-5 bg-light">
