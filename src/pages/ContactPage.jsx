@@ -58,7 +58,7 @@ const ContactPage = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-dark text-white text-center py-2 fixed-bottom">
+      <footer className="bg-dark text-white text-center pt-2 fixed-bottom">
         <div className="container">
           <p>&copy; {currentYear} Hanagakure</p>
         </div>

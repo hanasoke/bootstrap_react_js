@@ -6,17 +6,17 @@
         {
             "name": "Mitsubai AOI",
             "role": "Social Media Specialist",
-            "picture": "mitsuba_aoi.jpg" 
+            "picture": "/employees/mitsuba_aoi.jpg" 
         },
         {
             "name": "Hanas Bayu Pratama",
             "role": "Programmer",
-            "picture": "hanas.jpg" 
+            "picture": "/employees/hanas.jpg" 
         },
         {
             "name": "Ajeng Utami",
             "role": "UI / UX Designer",
-            "picture": "ajeng_utami.jpg" 
+            "picture": "/employees/ajeng_utami.jpg" 
         }
     ],
     "location": 

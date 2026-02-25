@@ -1,14 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'  
 import Navbar from '../components/Navbar'
-import roomData from '../assets/hanagakure.json'
+import hanagakureData from '../assets/hanagakure.json'
 
 const AboutUs = () => {
     const currentYear = new Date().getFullYear()
 
-    const rooms = roomData.rooms 
+    const rooms = hanagakureData.rooms 
 
-    const icon = roomData.icon 
+    const employees = hanagakureData.employees
+
+    const icon = hanagakureData.icon 
 
     return (
         <div>
@@ -66,44 +68,69 @@ const AboutUs = () => {
                     </div>
                 </div>
 
+            </section>
 
+            {/* Team Section */}
+            <section className="section-padding">
+                <div className="container">
+                    <div className="text-center mb-5">
+                        <h2 className="display-5 fw-bold mb-3">Inilah Tim Hanagakure</h2>
+                        <p className="lead mb-0">Tim Hanagakure Siap menghadapi permasalahan yang dialami oleh customer</p>
+                    </div>
+                    <div className="row g-4">
+                        {employees.map((employee, index) => (
+                            <div className="col-lg-4 col-md-6" key={index}>
+                                <div className="card team-card h-100 shadow-lg border-0 overflow-hidden">
+                                    <img src={`${employee.picture}`} className="team-img" alt="Ajeng Utami" />
+                                    <div className='card-body p-4 text-center'>
+                                        <h5 className="card-title fw-bold">{employee.name}</h5>
+                                        <p className='text-muted mb-2'>{employee.role}</p>
+                                        <div className="d-flex justify-content-center gap-2 mb-3">
+                                            <a href="#" className='bi bi-linkedin text-primary fs-5'></a>
+                                            <a href="#" className='bi bi-twitter text-primary fs-5'></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </section>
 
             {/* Content Section */}
             <section className="py-5 bg-light">
                 <div className="container">
-                <div className="row text-center mb-5">
-                    <h1 class="text-uppercase">Daftar Kamar yang tersedia</h1>
-                </div>
-                {/* First Slide */}
-                <div className="row">
-                    {rooms.map((room, index) =>  (
-                    <div className="col-lg-3 mb-4" key={index}>
-                        <div class="card h-100">
-                        <img src={`/rooms/${room.main_image}`} class="card-img-top" alt={room.name} style={{ height: '200px', objectFit: 'cover' }}/>
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">{room.name}</h5>
-                            <p class="card-text">{room.description}</p>
-                            <p class="fw-bold text-primary">
-                            {room.price.toLocaleString()}/bulan 
-                            </p>
-                            <Link 
-                            to={`/detail/${room.name.toLowerCase()}`} 
-                            state="{{ room: room }}" // Kirim data room ke halaman detail  
-                            class="btn btn-primary mt-2">
-                                Detail
-                            </Link>
-                        </div>
-                        </div>
+                    <div className="row text-center mb-5">
+                        <h1 class="text-uppercase">Daftar Kamar yang tersedia</h1>
                     </div>
-                    ))}
-                </div>
-
+                    {/* First Slide */}
+                    <div className="row">
+                        {rooms.map((room, index) =>  (
+                        <div className="col-lg-3 mb-4" key={index}>
+                            <div class="card h-100">
+                                <img src={`/rooms/${room.main_image}`} class="card-img-top" alt={room.name} style={{ height: '200px', objectFit: 'cover' }}/>
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">{room.name}</h5>
+                                    <p class="card-text">{room.description}</p>
+                                    <p class="fw-bold text-primary">
+                                    {room.price.toLocaleString()}/bulan 
+                                    </p>
+                                    <Link 
+                                    to={`/detail/${room.name.toLowerCase()}`} 
+                                    state="{{ room: room }}" // Kirim data room ke halaman detail  
+                                    class="btn btn-primary mt-2">
+                                        Detail
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                        ))}
+                    </div>
                 </div>
             </section>
 
             {/* Footer */}
-            <footer className="bg-dark text-white text-center py-2 fixed-bottom">
+            <footer className="bg-dark text-white text-center pt-2 fixed-bottom">
                 <div className="container">
                 <p>&copy; {currentYear} Hanagakure</p>
                 </div>
