@@ -2,6 +2,23 @@
     "icon": 
         "Hanagakure.png"
     ,
+    "employees": [
+        {
+            "name": "Mitsubai AOI",
+            "role": "Social Media Specialist",
+            "picture": "mitsuba_aoi.jpg" 
+        },
+        {
+            "name": "Hanas Bayu Pratama",
+            "role": "Programmer",
+            "picture": "hanas.jpg" 
+        },
+        {
+            "name": "Ajeng Utami",
+            "role": "UI / UX Designer",
+            "picture": "ajeng_utami.jpg" 
+        }
+    ],
     "location": 
         "Bekasi"
     ,
