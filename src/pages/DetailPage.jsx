@@ -159,7 +159,7 @@ const DetailPage = () => {
       {/* Contact Section */}
       <section id="contact" className="py-5 bg-light">
         <div className="container">
-          <h2 className="text-center mb-5">Hubungi Kami</h2>
+          <h2 className="text-center mb-5">Pesan Sekarang Juga</h2>
           <div className="row justify-content-center">
             <div className="col-md-8">
               <div className="card shadow">
@@ -173,6 +173,30 @@ const DetailPage = () => {
                       <div className="col-md-6 mb-3">
                         <label htmlFor="phone" className="form-label">No. Telepon</label>
                         <input type="tel" className="form-control" id="phone" />
+                      </div>
+                      <div className="col-md-6 mb-3">
+                        <label htmlFor="phone" className="form-label">Jumlah Orang</label>
+                        <select class="form-select" aria-label="Default select example">
+                          <option selected>Pilih jumlah Penyewa</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                      </div>
+                      <div className="col-md-6 mb-3">
+                        <label htmlFor="phone" className="form-label">E-Wallet Payment</label>
+                        <select class="form-select" aria-label="Default select example">
+                          <option selected>Pilih Jenis Pembayaran</option>
+                          <option value="1">Shopee Pay</option>
+                          <option value="2">Ovo</option>
+                          <option value="3">Dana</option>
+                          <option value="3">Link Aja</option>
+                        </select>
+                      </div>
+                      <div className="col mb-3">
+                        <label htmlFor="formFile" className="form-label">Bukti Pembayaran</label>
+                        <input className="form-control" type="file" id="formFile"/>
+                        <small className='text-success'>Harus sesuai harga sewa kamar</small>
                       </div>
                     </div>
                     <div className="mb-3">
