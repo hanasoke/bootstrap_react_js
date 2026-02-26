@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link, useLocation, useParams } from 'react-router-dom' // Import Link 
 import Navbar from '../components/Navbar'
 import roomData from '../assets/hanagakure.json'
@@ -7,6 +7,22 @@ const DetailPage = () => {
   const currentYear = new Date().getFullYear()
   const location = useLocation()
   const { roomName } = useParams()
+
+  // State untuk menyimpan data form 
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    check_in: '',
+    check_out: '',
+    payment_method: '',
+    jumlah_penyewa: '',
+    message: `saya tertarik dengan kamar ${roomData.rooms.find(r => r.name.toLowerCase() === roomName)?.name || 'ini'}. Apakahh masih tersedia?`
+  })
+
+  // State untuk menyimpan error validasi 
+  const [errors, setErrors] = useState({})
+  const [showModal, setShowModal] = useState(false)
 
   // Ambil data room dari state (dikirim dari HomePage) atau dari params 
   const room  = location.state?.room || 
@@ -22,7 +38,7 @@ const DetailPage = () => {
     room.image_1, 
     room.image_2, 
     room.image_3 
-  ].filter(img => img) // Filter out undefined images  
+  ].filter(img => img) // Filter out undefined images 
 
   return (
     <div>
