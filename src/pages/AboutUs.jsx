@@ -114,7 +114,7 @@ const AboutUs = () => {
                             <div className="accordion" id="faqAccordion">
                                 <div className="accordion-item mb-3 faq-item">
                                     <h2 className="accordion-header">
-                                        <button class="accordion-button" type='button' data-bs-toggle="collapse" data-bs-target="#faq1">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
                                             Apakah ada deposito awal yang harus diberikan ?
                                         </button>
                                     </h2>
@@ -130,9 +130,33 @@ const AboutUs = () => {
                                             Apakah ada servis kosan apabila terdapat masalah ?
                                         </button>
                                     </h2>
-                                    <div id="faq2" className="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                    <div id="faq2" className="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                         <div className="accordion-body">
-                                            Ya, anda bisa bertanya kepada customer service kami dan teknisi kami siap membantu anda dalam waktu 8 Jam Per Hari  
+                                            Ya, anda bisa bertanya kepada customer service kami dan teknisi kami siap membantu anda dalam waktu 8 Jam Per Hari.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="accordion-item mb-3 faq-item">
+                                    <h2 className="accordion-header">
+                                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                            Apakah ada tempat parkir kendaraan ?
+                                        </button>
+                                    </h2>
+                                    <div id="faq3" className="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div className="accordion-body">
+                                            Untuk saat ini hanya tersedia tempat parkir motor tapi untuk mobil maaf kami belum menyediakan.  
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="accordion-item mb-3 faq-item">
+                                    <h2 className="accordion-header">
+                                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                            Apakah ada Wastafel nya ?
+                                        </button>
+                                    </h2>
+                                    <div id="faq4" className="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div className="accordion-body">
+                                            Ya, setiap kamar dihanagakure ada wastafelnya  
                                         </div>
                                     </div>
                                 </div>
