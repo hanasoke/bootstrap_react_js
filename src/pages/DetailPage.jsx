@@ -167,12 +167,16 @@ const DetailPage = () => {
                   <form>
                     <div className="row">
                       <div className="col-md-6 mb-3">
-                        <label htmlFor="name" className="form-label">Nama Penyewa</label>
-                        <input type="text" className="form-control" id="name" placeholder='masukkan nama penyewa' />
+                        <label htmlFor="name" className="form-label">Nama Pemesan</label>
+                        <input type="text" className="form-control" id="name" placeholder='masukkan nama pemesan' />
                       </div>
                       <div className="col-md-6 mb-3">
-                        <label htmlFor="phone" className="form-label">Nomor Handphone Penyewa</label>
-                        <input type="number" className="form-control" id="phone" placeholder='masukkan nomor handphone penyewa' />
+                        <label htmlFor="phone" className="form-label">Nomor Handphone Pemesan</label>
+                        <input type="number" className="form-control" id="phone" placeholder='masukkan nomor handphone pemesan' />
+                      </div>
+                      <div className="col-12 mb-3">
+                        <label htmlFor="email" className="form-label">Email</label>
+                        <input type="email" className="form-control" id="email" placeholder='masukkan email pemesan'  />
                       </div>
                       <div className="col-md-6 mb-3">
                         <label htmlFor="check_in" className="form-label">Check In</label>
@@ -207,6 +211,10 @@ const DetailPage = () => {
                         </select>
                       </div>
                     </div>
+                    <div className="col mb-3">
+                      <label htmlFor="room" className="form-label">Room_Name</label>
+                      <input type="text" className="form-control" id="room" value="room name" readonly/>
+                    </div>
                     <div className="mb-3">
                       <label htmlFor="message" className="form-label">Pesan (Tertarik dengan {room.name})</label>
                       <textarea className="form-control" id="message" rows="4" defaultValue={`saya tertarik dengan kamar ${room.name}. Apakah masih tersedia?`}></textarea>
@@ -222,14 +230,20 @@ const DetailPage = () => {
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">Detail Penyewa</h1>
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Detail Pemesan</h1>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                   <div class="mb-3 row">
-                    <label for="nama_penyewa" class="col-sm-4 col-form-label">Nama Penyewa</label>
+                    <label for="nama_penyewa" class="col-sm-4 col-form-label">Nama Pemesan</label>
                     <div class="col-sm-8">
                       <input type="text" readonly class="form-control-plaintext" id="nama_penyewa" value="#"/>
+                    </div>
+                  </div>
+                  <div class="mb-3 row">
+                    <label for="email_pemesan" class="col-sm-4 col-form-label">Email Pemesan</label>
+                    <div class="col-sm-8">
+                      <input type="text" readonly class="form-control-plaintext" id="email_pemesan" value="#"/>
                     </div>
                   </div>
                   <div class="mb-3 row">
