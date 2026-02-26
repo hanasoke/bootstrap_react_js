@@ -167,41 +167,42 @@ const DetailPage = () => {
                   <form>
                     <div className="row">
                       <div className="col-md-6 mb-3">
-                        <label htmlFor="name" className="form-label">Nama</label>
-                        <input type="text" className="form-control" id="name" />
+                        <label htmlFor="name" className="form-label">Nama Penyewa</label>
+                        <input type="text" className="form-control" id="name" placeholder='masukkan nama penyewa' />
+                      </div>
+                      <div className="col-md-6 mb-3">
+                        <label htmlFor="phone" className="form-label">Nomor Handphone Penyewa</label>
+                        <input type="tel" className="form-control" id="phone" placeholder='masukkan nomor handphone penyewa' />
+                      </div>
+                      <div className="col-md-6 mb-3">
+                        <label htmlFor="check_in" className="form-label">Check In</label>
+                        <input type="date" className="form-control" id="check_in" />
+                      </div>
+                      <div className="col-md-6 mb-3">
+                        <label htmlFor="check_out" className="form-label">Check Out</label>
+                        <input type="date" className="form-control" id="check_out" />
                       </div>
                       <div className="col-md-6 mb-3">
                         <label htmlFor="phone" className="form-label">No. Telepon</label>
-                        <input type="tel" className="form-control" id="phone" />
+                        <input type="number" className="form-control" id="phone" placeholder='masukkan nomor telpon' />
                       </div>
                       <div className="col-md-6 mb-3">
                         <label htmlFor="phone" className="form-label">Jumlah Orang</label>
                         <select class="form-select" aria-label="Default select example">
                           <option selected>Pilih jumlah Penyewa</option>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
                         </select>
-                      </div>
-                      <div className="col-md-6 mb-3">
-                        <label htmlFor="phone" className="form-label">E-Wallet Payment</label>
-                        <select class="form-select" aria-label="Default select example">
-                          <option selected>Pilih Jenis Pembayaran</option>
-                          <option value="1">Shopee Pay</option>
-                          <option value="2">Ovo</option>
-                          <option value="3">Dana</option>
-                          <option value="3">Link Aja</option>
-                        </select>
-                      </div>
-                      <div className="col mb-3">
-                        <label htmlFor="formFile" className="form-label">Bukti Pembayaran</label>
-                        <input className="form-control" type="file" id="formFile"/>
-                        <small className='text-success'>Harus sesuai harga sewa kamar</small>
                       </div>
                     </div>
                     <div className="mb-3">
                       <label htmlFor="message" className="form-label">Pesan (Tertarik dengan {room.name})</label>
                       <textarea className="form-control" id="message" rows="4" defaultValue={`saya tertarik dengan kamar ${room.name}. Apakah masih tersedia?`}></textarea>
+                      <small className='text-success'>optional</small>
                     </div>
                     <button type="submit" className="btn btn-success w-100">Kirim Pesan</button>
                   </form>
