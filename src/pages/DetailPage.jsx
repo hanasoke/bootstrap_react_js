@@ -81,8 +81,49 @@ const DetailPage = () => {
       newErrors.email = 'Format email tidak valid'
     }
 
+    // Validasi check in 
+    if(!formData.check_in) {
+      newErrors.check_in = 'Tanggal check in harus diisi'
+    } else {
+      const today = new Date().toISOString().split('T')[0]
+      if(formData.check_in < today) {
+        newErrors.check_in = 'Tanggal check in tidak boleh kurang dari hari ini'
+      }
+    }
 
+    // Validasi check out 
+    if(!formData.check_out) {
+      newErrors.check_out = 'Tanggal check out harus diisi'
+    } else if(formData.check_out <= formData.check_in) {
+      newErrors.check_out = 'Tanggal check out harus setelah check in'
+    }
 
+    // Validasi metode pembayaran 
+    if(!formData.payment_method) {
+      newErrors.payment_method = 'Metode pembayaran harus dipilih'
+    }
+
+    // Validasi jumlah penyewa 
+    if(!formData.jumlah_penyewa) {
+      newErrors.jumlah_penyewa = 'Jumlah penyewa harus dipilih'
+    }
+
+    setErrors(newErrors) 
+    return Object.keys(newErrors).length === 0
+  }
+
+  // Handle submit form 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    if (validateForm()) {
+      setShowModal(true)
+    }
+  }
+
+  // Handle modal close 
+  const handleCloseModal = () => {
+    setShowModal(false)
   }
 
   return (
@@ -225,23 +266,55 @@ const DetailPage = () => {
             <div className="col-md-8">
               <div className="card shadow">
                 <div className="card-body p-5">
-                  <form>
+                  <form onSubmit={handleSubmit}>
                     <div className="row">
                       <div className="col-md-6 mb-3">
-                        <label htmlFor="name" className="form-label">Nama Pemesan</label>
-                        <input type="text" className="form-control" id="name" placeholder='masukkan nama pemesan' />
+                        <label htmlFor="name" className="form-label">Nama Pemesan <span className='text-danger'>*</span></label>
+                        <input 
+                          type="text" 
+                          className={`form-control ${errors.name ? 'is-invalid' : ''}`} 
+                          id="name" 
+                          placeholder='masukkan nama pemesan' 
+                          value={formData.name}
+                          onChange={handleInputChange}  
+                        />
+                        {errors.name && <div className='invalid-feedback'>{errors.name}</div> }
                       </div>
                       <div className="col-md-6 mb-3">
-                        <label htmlFor="phone" className="form-label">Nomor Handphone Pemesan</label>
-                        <input type="number" className="form-control" id="phone" placeholder='masukkan nomor handphone pemesan' />
+                        <label htmlFor="phone" className="form-label">Nomor Handphone Pemesan <span className='text-danger'>*</span></label>
+                        <input 
+                          type="number" 
+                          className={`form-control ${errors.phone ? 'is-invalid' : ''}`} 
+                          id="phone" 
+                          placeholder='masukkan nomor handphone pemesan' 
+                          value={formData.phone}
+                          onChange={handleInputChange}  
+                        />
+                        {errors.phone && <div className='invalid-feedback'>{errors.phone}</div> }
                       </div>
                       <div className="col-12 mb-3">
-                        <label htmlFor="email" className="form-label">Email</label>
-                        <input type="email" className="form-control" id="email" placeholder='masukkan email pemesan'  />
+                        <label htmlFor="email" className="form-label">Email <span className='text-danger'>*</span></label>
+                        <input 
+                          type="email" 
+                          className={`form-control ${errors.email ? 'is-invalid' : ''}`} 
+                          id="email" 
+                          placeholder='masukkan email pemesan'  
+                          value={formData.email}
+                          onChange={handleInputChange}  
+                        />
+                        {errors.email && <div className='invalid-feedback'>{errors.email}</div> }
                       </div>
                       <div className="col-md-6 mb-3">
-                        <label htmlFor="check_in" className="form-label">Check In</label>
-                        <input type="date" className="form-control" id="check_in" />
+                        <label htmlFor="check_in" className="form-label">Check In <span className='text-danger'>*</span></label>
+                        <input 
+                          type="date" 
+                          className={`form-control ${errors.check_in ? 'is-invalid' : ''}`} 
+                          id="check_in" 
+                          value={formData.check_in}
+                          onChange={handleInputChange}
+                          min={new Date().toISOString.split('T')[0]}  
+                        />
+                        {errors.check_in && <div className='invalid-feedback'>{errors.check_in}</div> }
                       </div>
                       <div className="col-md-6 mb-3">
                         <label htmlFor="check_out" className="form-label">Check Out</label>
