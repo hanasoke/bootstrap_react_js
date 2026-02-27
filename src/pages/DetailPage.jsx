@@ -317,13 +317,26 @@ const DetailPage = () => {
                         {errors.check_in && <div className='invalid-feedback'>{errors.check_in}</div> }
                       </div>
                       <div className="col-md-6 mb-3">
-                        <label htmlFor="check_out" className="form-label">Check Out</label>
-                        <input type="date" className="form-control" id="check_out" />
+                        <label htmlFor="check_out" className="form-label">Check Out <span className='text-danger'>*</span></label>
+                        <input 
+                          type="date" 
+                          className="form-control" 
+                          id="check_out"
+                          value={formData.check_out}
+                          onChange={handleInputChange}
+                          min={formData.check_in || new Date().toISOString().split('T')[0]}  
+                        />
+                        {errors.check_out && <div className='invalid-feedback'>{errors.check_out}</div> }
                       </div>
                       <div className="col-md-6 mb-3">
-                        <label htmlFor="metode_pembayaran" className="form-label">Metode Pembayaran</label>
-                        <select class="form-select" id="metode_pembayaran" aria-label="Default select example">
-                          <option selected>Pilih Metode Pembayaran</option>
+                        <label htmlFor="payment_method" className="form-label">Metode Pembayaran <span className='text-danger'>*</span></label>
+                        <select 
+                          className={`form-select ${errors.payment_method ? 'is-invalid' : ''}`}  
+                          id="payment_method"
+                          value={formData.payment_method}
+                          onChange={handleInputChange}  
+                        >
+                          <option value="">Pilih Metode Pembayaran</option>
                           <option value="ovo">Ovo</option>
                           <option value="shopee_pay">Shopee Pay</option>
                           <option value="dana">Dana</option>
@@ -331,9 +344,10 @@ const DetailPage = () => {
                           <option value="bca">BCA</option>
                           <option value="bri">BRI</option>
                         </select>
+                        {errors.payment_method && <div className='invalid-feedback'>{errors.payment_method}</div> }
                       </div>
                       <div className="col-md-6 mb-3">
-                        <label htmlFor="phone" className="form-label">Jumlah Orang</label>
+                        <label htmlFor="phone" className="form-label">Jumlah Penyewa</label>
                         <select class="form-select" aria-label="Default select example">
                           <option selected>Pilih jumlah Penyewa</option>
                           <option value="1">1</option>
