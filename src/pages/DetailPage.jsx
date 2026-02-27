@@ -312,8 +312,9 @@ const DetailPage = () => {
                           id="check_in" 
                           value={formData.check_in}
                           onChange={handleInputChange}
-                          min={new Date().toISOString.split('T')[0]}  
+                          min={new Date().toISOString().split('T')[0]}  
                         />
+
                         {errors.check_in && <div className='invalid-feedback'>{errors.check_in}</div> }
                       </div>
                       <div className="col-md-6 mb-3">
@@ -348,7 +349,12 @@ const DetailPage = () => {
                       </div>
                       <div className="col-md-6 mb-3">
                         <label htmlFor="phone" className="form-label">Jumlah Penyewa</label>
-                        <select class="form-select" aria-label="Default select example">
+                        <select 
+                          className={`form-select ${errors.jumlah_penyewa ? 'is-invalid' : ''}`}
+                          id="jumlah_penyewa"
+                          value={formData.jumlah_penyewa}
+                          onChange={handleInputChange}  
+                        >
                           <option selected>Pilih jumlah Penyewa</option>
                           <option value="1">1</option>
                           <option value="2">2</option>
@@ -357,16 +363,17 @@ const DetailPage = () => {
                           <option value="5">5</option>
                           <option value="6">6</option>
                         </select>
+                        {errors.jumlah_penyewa && <div className='invalid-feedback'>{errors.jumlah_penyewa}</div> }
                       </div>
-                    </div>
-                    <div className="col mb-3">
-                      <label htmlFor="room" className="form-label">Room_Name</label>
-                      <input type="text" className="form-control" id="room" value="room name" readonly/>
-                    </div>
-                    <div className="mb-3">
-                      <label htmlFor="message" className="form-label">Pesan (Tertarik dengan {room.name})</label>
-                      <textarea className="form-control" id="message" rows="4" defaultValue={`saya tertarik dengan kamar ${room.name}. Apakah masih tersedia?`}></textarea>
-                      <small className='text-success'>optional</small>
+                      <div className="col mb-3">
+                        <label htmlFor="room" className="form-label">Room_Name</label>
+                        <input type="text" className="form-control" id="room" value="room name" readonly/>
+                      </div>
+                      <div className="mb-3">
+                        <label htmlFor="message" className="form-label">Pesan (Tertarik dengan {room.name})</label>
+                        <textarea className="form-control" id="message" rows="4" defaultValue={`saya tertarik dengan kamar ${room.name}. Apakah masih tersedia?`}></textarea>
+                        <small className='text-success'>optional</small>
+                      </div>
                     </div>
                     <button type="button" className="btn btn-success w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">Kirim Pesan</button>
                   </form>
