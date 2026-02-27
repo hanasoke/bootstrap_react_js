@@ -40,6 +40,51 @@ const DetailPage = () => {
     room.image_3 
   ].filter(img => img) // Filter out undefined images 
 
+  // Handle input change 
+  const handleInputChange = (e) => {
+    const { id, value } = e.target 
+    setFormData({
+      ...formData,
+      [id]: value 
+    })
+    // Hapus error untuk field yang sedang diisi 
+    if(errors[id]) {
+      setErrors({
+        ...errors,
+        [id]: null 
+      })
+    }
+  }
+
+  // validasi form 
+  const validateForm = () => {
+    const newErrors = {}
+
+    // Validasi nama 
+    if(!formData.name.trim()) {
+      newErrors.name = 'Nama pemesan harus diisi'
+    } else if (formData.name.length < 3) {
+      newErrors.name = 'Nama minimal 3 karakter'
+    }
+
+    // Validasi nomor handphone 
+    if (!formData.phone.trim()) {
+      newErrors.phone = 'Nomor handphone harus diisi'
+    } else if (!/^[0-9]{10,13}$/.test(formData.phone)) {
+      newErrors.phone = 'Nomor handphone harus 10-13 digit angka'
+    }
+
+    // validasi email
+    if(!formData.phone.trim()) {
+      newErrors.email = 'Email harus diisi'
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'Format email tidak valid'
+    }
+
+
+
+  }
+
   return (
     <div>
       <Navbar />
