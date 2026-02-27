@@ -367,15 +367,25 @@ const DetailPage = () => {
                       </div>
                       <div className="col mb-3">
                         <label htmlFor="room" className="form-label">Room_Name</label>
-                        <input type="text" className="form-control" id="room" value="room name" readonly/>
+                        <input 
+                          type="text" 
+                          className="form-control" 
+                          id="room" 
+                          value={room.name} readonly/>
                       </div>
                       <div className="mb-3">
                         <label htmlFor="message" className="form-label">Pesan (Tertarik dengan {room.name})</label>
-                        <textarea className="form-control" id="message" rows="4" defaultValue={`saya tertarik dengan kamar ${room.name}. Apakah masih tersedia?`}></textarea>
+                        <textarea 
+                          className="form-control" 
+                          id="message" 
+                          rows="4" 
+                          value={formData.message}
+                          onChange={handleInputChange}  
+                        ></textarea>
                         <small className='text-success'>optional</small>
                       </div>
                     </div>
-                    <button type="button" className="btn btn-success w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">Kirim Pesan</button>
+                    <button type="submit" className="btn btn-success w-100">Kirim Pesan</button>
                   </form>
                 </div>
               </div>
