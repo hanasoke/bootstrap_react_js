@@ -22,78 +22,79 @@
     "location": 
         "Bekasi"
     ,
-    "rooms": [{
-        "name": "Kirigakure",
-        "description": "Kosan seperti view desa kirigakure",
-        "price": 210000,
-        "main_image": "kirigakure/main.jpg", 
-        "image_1": "kirigakure/2.jpg",
-        "image_2": "kirigakure/3.jpg",
-        "image_3": "kirigakure/4.jpg"
+    "rooms": [
+        {
+            "name": "Kirigakure",
+            "description": "Kosan seperti view desa kirigakure",
+            "price": 210000,
+            "main_image": "kirigakure/main.jpg", 
+            "image_1": "kirigakure/2.jpg",
+            "image_2": "kirigakure/3.jpg",
+            "image_3": "kirigakure/4.jpg"
 
-    }, 
-    {
-        "name": "Konohagakure",
-        "description": "Kosan seperti view desa kirigakure",
-        "price": 285000,
-        "main_image": "konohagakure/main.jpg", 
-        "image_1": "konohagakure/space_room.jpg",
-        "image_2": "konohagakure/sitting_room.jpg",
-        "image_3": "konohagakure/bathroom.jpg"
-    }, 
-    {
-        "name": "Sunagakure", 
-        "description": "Kosan seperti view desa kirigakure",
-        "price": 185000,
-        "main_image": "sunagakure/main.jpg", 
-        "image_1": "sunagakure/main.jpg",
-        "image_2": "sunagakure/main.jpg",
-        "image_3": "sunagakure/main.jpg"
-    }, 
-    {
-        "name": "Komugakure", 
-        "description": "Kosan seperti view desa kirigakure",
-        "price": 55000,
-        "main_image": "komugakure/main.jpg", 
-        "image_1": "komugakure/main.jpg",
-        "image_2": "komugakure/main.jpg",
-        "image_3": "komugakure/main.jpg"
-    }, 
-    {
-        "name": "Iwagakure", 
-        "description": "Kosan seperti view desa kirigakure",
-        "price": 342000,
-        "main_image": "iwagakure/main.jpg", 
-        "image_1": "iwagakure/main.jpg",
-        "image_2": "iwagakure/main.jpg",
-        "image_3": "iwagakure/main.jpg"
-    }, 
-    {
-        "name": "Amegakure", 
-        "description": "Kosan seperti view desa kirigakure",
-        "price": 240000,
-        "main_image": "amegakure/main.jpg", 
-        "image_1": "amegakure/main.jpg",
-        "image_2": "amegakure/main.jpg",
-        "image_3": "amegakure/main.jpg"
-    }, 
-    {
-        "name": "Otogakure", 
-        "description": "Kosan seperti view desa kirigakure",
-        "price": 105000,
-        "main_image": "otogakure/main.jpg", 
-        "image_1": "otogakure/main.jpg",
-        "image_2": "otogakure/main.jpg",
-        "image_3": "otogakure/main.jpg"
-    }, 
-    {
-        "name": "Takigakure", 
-        "description": "Desa Air Tersembunyi",
-        "price": 89000,
-        "main_image": "takigakure/main.jpg", 
-        "image_1": "takigakure/main.jpg",
-        "image_2": "takigakure/main.jpg",
-        "image_3": "takigakure/main.jpg"
-    }
+        }, 
+        {
+            "name": "Konohagakure",
+            "description": "Kosan seperti view desa kirigakure",
+            "price": 285000,
+            "main_image": "konohagakure/main.jpg", 
+            "image_1": "konohagakure/space_room.jpg",
+            "image_2": "konohagakure/sitting_room.jpg",
+            "image_3": "konohagakure/bathroom.jpg"
+        }, 
+        {
+            "name": "Sunagakure", 
+            "description": "Kosan seperti view desa kirigakure",
+            "price": 185000,
+            "main_image": "sunagakure/main.jpg", 
+            "image_1": "sunagakure/main.jpg",
+            "image_2": "sunagakure/main.jpg",
+            "image_3": "sunagakure/main.jpg"
+        }, 
+        {
+            "name": "Komugakure", 
+            "description": "Kosan seperti view desa kirigakure",
+            "price": 55000,
+            "main_image": "komugakure/main.jpg", 
+            "image_1": "komugakure/main.jpg",
+            "image_2": "komugakure/main.jpg",
+            "image_3": "komugakure/main.jpg"
+        }, 
+        {
+            "name": "Iwagakure", 
+            "description": "Kosan seperti view desa kirigakure",
+            "price": 342000,
+            "main_image": "iwagakure/main.jpg", 
+            "image_1": "iwagakure/main.jpg",
+            "image_2": "iwagakure/main.jpg",
+            "image_3": "iwagakure/main.jpg"
+        }, 
+        {
+            "name": "Amegakure", 
+            "description": "Kosan seperti view desa kirigakure",
+            "price": 240000,
+            "main_image": "amegakure/main.jpg", 
+            "image_1": "amegakure/main.jpg",
+            "image_2": "amegakure/main.jpg",
+            "image_3": "amegakure/main.jpg"
+        }, 
+        {
+            "name": "Otogakure", 
+            "description": "Kosan seperti view desa kirigakure",
+            "price": 105000,
+            "main_image": "otogakure/main.jpg", 
+            "image_1": "otogakure/main.jpg",
+            "image_2": "otogakure/main.jpg",
+            "image_3": "otogakure/main.jpg"
+        }, 
+        {
+            "name": "Takigakure", 
+            "description": "Desa Air Tersembunyi",
+            "price": 89000,
+            "main_image": "takigakure/main.jpg", 
+            "image_1": "takigakure/main.jpg",
+            "image_2": "takigakure/main.jpg",
+            "image_3": "takigakure/main.jpg"
+        }
     ]
 }
