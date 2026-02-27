@@ -391,69 +391,78 @@ const DetailPage = () => {
               </div>
             </div>
           </div>
-          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">Detail Pemesan</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <div class="mb-3 row">
-                    <label for="nama_penyewa" class="col-sm-4 col-form-label">Nama Pemesan</label>
-                    <div class="col-sm-8">
-                      <input type="text" readonly class="form-control-plaintext" id="nama_penyewa" value="#"/>
+          {/* Modal */}
+          {showModal && (
+            <div class="modal fade show" id="exampleModal" tabindex="-1" style={{ display: 'block', backgroundColor: 'rgba(0,0,0,0.5)' }} aria-modal="true" role="dialog">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Detail Pemesan</h1>
+                    <button type="button" class="btn-close" onClick={handleCloseModal} aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="mb-3 row">
+                      <label for="nama_kamar" class="col-sm-4 col-form-label fw-bold">Nama Pemesan</label>
+                      <div class="col-sm-8">
+                        <p class="form-control-plaintext" id="nama_kamar">{room.name}</p>
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="nama_penyewa" class="col-sm-4 col-form-label">Nama Pemesan</label>
+                      <div class="col-sm-8">
+                        <input type="text" readonly class="form-control-plaintext" id="nama_penyewa" value="#"/>
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="email_pemesan" class="col-sm-4 col-form-label">Email Pemesan</label>
+                      <div class="col-sm-8">
+                        <input type="text" readonly class="form-control-plaintext" id="email_pemesan" value="#"/>
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="nomor_handphone" class="col-sm-4 col-form-label">Nomor Handphone</label>
+                      <div class="col-sm-8">
+                        <input type="text" readonly class="form-control-plaintext" id="nomor_handphone" value="#"/>
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="check_in" class="col-sm-4 col-form-label">Check In</label>
+                      <div class="col-sm-8">
+                        <input type="text" readonly class="form-control-plaintext" id="check_in" value="#"/>
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="check_out" class="col-sm-4 col-form-label">Check Out</label>
+                      <div class="col-sm-8">
+                        <input type="text" readonly class="form-control-plaintext" id="check_out" value="#"/>
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="metode_pembayaran" class="col-sm-4 col-form-label">Metode Pembayaran</label>
+                      <div class="col-sm-8">
+                        <input type="text" readonly class="form-control-plaintext" id="metode_pembayaran" value="#"/>
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="jumlah_penyewa" class="col-sm-4 col-form-label">Jumlah penyewa</label>
+                      <div class="col-sm-8">
+                        <input type="text" readonly class="form-control-plaintext" id="jumlah_penyewa" value="#"/>
+                      </div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="pesan" class="col-sm-4 col-form-label">Pesan</label>
+                      <div class="col-sm-8">
+                        <input type="text" readonly class="form-control-plaintext" id="pesan" value="#"/>
+                      </div>
                     </div>
                   </div>
-                  <div class="mb-3 row">
-                    <label for="email_pemesan" class="col-sm-4 col-form-label">Email Pemesan</label>
-                    <div class="col-sm-8">
-                      <input type="text" readonly class="form-control-plaintext" id="email_pemesan" value="#"/>
-                    </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   </div>
-                  <div class="mb-3 row">
-                    <label for="nomor_handphone" class="col-sm-4 col-form-label">Nomor Handphone</label>
-                    <div class="col-sm-8">
-                      <input type="text" readonly class="form-control-plaintext" id="nomor_handphone" value="#"/>
-                    </div>
-                  </div>
-                  <div class="mb-3 row">
-                    <label for="check_in" class="col-sm-4 col-form-label">Check In</label>
-                    <div class="col-sm-8">
-                      <input type="text" readonly class="form-control-plaintext" id="check_in" value="#"/>
-                    </div>
-                  </div>
-                  <div class="mb-3 row">
-                    <label for="check_out" class="col-sm-4 col-form-label">Check Out</label>
-                    <div class="col-sm-8">
-                      <input type="text" readonly class="form-control-plaintext" id="check_out" value="#"/>
-                    </div>
-                  </div>
-                  <div class="mb-3 row">
-                    <label for="metode_pembayaran" class="col-sm-4 col-form-label">Metode Pembayaran</label>
-                    <div class="col-sm-8">
-                      <input type="text" readonly class="form-control-plaintext" id="metode_pembayaran" value="#"/>
-                    </div>
-                  </div>
-                  <div class="mb-3 row">
-                    <label for="jumlah_penyewa" class="col-sm-4 col-form-label">Jumlah penyewa</label>
-                    <div class="col-sm-8">
-                      <input type="text" readonly class="form-control-plaintext" id="jumlah_penyewa" value="#"/>
-                    </div>
-                  </div>
-                  <div class="mb-3 row">
-                    <label for="pesan" class="col-sm-4 col-form-label">Pesan</label>
-                    <div class="col-sm-8">
-                      <input type="text" readonly class="form-control-plaintext" id="pesan" value="#"/>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
               </div>
             </div>
-          </div>
+          )}
           <div className="row mt-4 text-center">
             <div className="col-md-6">
               <h5>Alamat</h5>
