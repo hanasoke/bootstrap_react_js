@@ -140,7 +140,7 @@ const DetailPage = () => {
                 {room.description}
               </p>
               <h3 className='text-primary mb-4'>
-                Rp {room.price.toLocaleString()}/bulan 
+                Rp {room.price.toLocaleString()} / Hari 
               </h3>
               <img 
                 src={`/rooms/${room.main_image}`} 
@@ -393,54 +393,54 @@ const DetailPage = () => {
           </div>
           {/* Modal */}
           {showModal && (
-            <div class="modal fade show" id="exampleModal" tabindex="-1" style={{ display: 'block', backgroundColor: 'rgba(0,0,0,0.5)' }} aria-modal="true" role="dialog">
-              <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Detail Pemesan</h1>
-                    <button type="button" class="btn-close" onClick={handleCloseModal} aria-label="Close"></button>
+            <div className="modal fade show" id="exampleModal" tabindex="-1" style={{ display: 'block', backgroundColor: 'rgba(0,0,0,0.5)' }} aria-modal="true" role="dialog">
+              <div className="modal-dialog modal-dialog-centered">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h1 className="modal-title fs-5" id="exampleModalLabel">Detail Pemesan</h1>
+                    <button type="button" className="btn-close" onClick={handleCloseModal} aria-label="Close"></button>
                   </div>
-                  <div class="modal-body">
-                    <div class="mb-3 row">
-                      <label for="nama_kamar" class="col-sm-4 col-form-label fw-bold">Nama Kamar</label>
-                      <div class="col-sm-8">
-                        <p class="form-control-plaintext" id="nama_kamar">{room.name}</p>
+                  <div className="modal-body">
+                    <div className="mb-3 row">
+                      <label htmlFor="nama_kamar" className="col-sm-4 col-form-label fw-bold">Nama Kamar</label>
+                      <div className="col-sm-8">
+                        <p className="form-control-plaintext" id="nama_kamar">{room.name}</p>
                       </div>
                     </div>
-                    <div class="mb-3 row">
-                      <label for="nama_pemesan" class="col-sm-4 col-form-label fw-bold">Nama Pemesan</label>
-                      <div class="col-sm-8">
-                        <p class="form-control-plaintext" id="nama_pemesan">{formData.name || '-'}</p>
+                    <div className="mb-3 row">
+                      <label htmlFor="nama_pemesan" className="col-sm-4 col-form-label fw-bold">Nama Pemesan</label>
+                      <div className="col-sm-8">
+                        <p className="form-control-plaintext" id="nama_pemesan">{formData.name || '-'}</p>
                       </div>
                     </div>
-                    <div class="mb-3 row">
-                      <label for="email_pemesan" class="col-sm-4 col-form-label fw-bold">Email Pemesan</label>
-                      <div class="col-sm-8">
-                        <p class="form-control-plaintext" id="email_pemesan">{formData.email || '-'}</p>
+                    <div className="mb-3 row">
+                      <label htmlFor="email_pemesan" className="col-sm-4 col-form-label fw-bold">Email Pemesan</label>
+                      <div className="col-sm-8">
+                        <p className="form-control-plaintext" id="email_pemesan">{formData.email || '-'}</p>
                       </div>
                     </div>
-                    <div class="mb-3 row">
-                      <label for="nomor_handphone" class="col-sm-4 col-form-label fw-bold">Nomor Handphone</label>
-                      <div class="col-sm-8">
-                        <p class="form-control-plaintext" id="nomor_handphone">{formData.phone || '-'}</p>
+                    <div className="mb-3 row">
+                      <label htmlFor="nomor_handphone" className="col-sm-4 col-form-label fw-bold">Nomor Handphone</label>
+                      <div className="col-sm-8">
+                        <p className="form-control-plaintext" id="nomor_handphone">{formData.phone || '-'}</p>
                       </div>
                     </div>
-                    <div class="mb-3 row">
-                      <label for="check_in" class="col-sm-4 col-form-label fw-bold">Check In</label>
-                      <div class="col-sm-8">
-                        <p class="form-control-plaintext" id="check_in">{formData.check_in || '-'}</p>
+                    <div className="mb-3 row">
+                      <label htmlFor="check_in" className="col-sm-4 col-form-label fw-bold">Check In</label>
+                      <div className="col-sm-8">
+                        <p className="form-control-plaintext" id="check_in">{formData.check_in || '-'}</p>
                       </div>
                     </div>
-                    <div class="mb-3 row">
-                      <label for="check_out" class="col-sm-4 col-form-label fw-bold">Check Out</label>
-                      <div class="col-sm-8">
-                        <p class="form-control-plaintext" id="check_out">{formData.check_out || '-'}</p>
+                    <div className="mb-3 row">
+                      <label htmlFor="check_out" className="col-sm-4 col-form-label fw-bold">Check Out</label>
+                      <div className="col-sm-8">
+                        <p className="form-control-plaintext" id="check_out">{formData.check_out || '-'}</p>
                       </div>
                     </div>
-                    <div class="mb-3 row">
-                      <label for="metode_pembayaran" class="col-sm-4 col-form-label fw-bold">Metode Pembayaran</label>
-                      <div class="col-sm-8">
-                        <p class="form-control-plaintext" id="metode_pembayaran">
+                    <div className="mb-3 row">
+                      <label htmlFor="metode_pembayaran" className="col-sm-4 col-form-label fw-bold">Metode Pembayaran</label>
+                      <div className="col-sm-8">
+                        <p className="form-control-plaintext" id="metode_pembayaran">
                           {
                             formData.payment_method ? 
                               formData.payment_method.split('_').map(word => 
@@ -450,23 +450,40 @@ const DetailPage = () => {
                         </p>
                       </div>
                     </div>
-                    <div class="mb-3 row">
-                      <label for="jumlah_penyewa" class="col-sm-4 col-form-label fw-bold">Jumlah penyewa</label>
-                      <div class="col-sm-8">
-                        <p class="form-control-plaintext" id="jumlah_penyewa">
+                    <div className="mb-3 row">
+                      <label htmlFor="jumlah_penyewa" className="col-sm-4 col-form-label fw-bold">Jumlah penyewa</label>
+                      <div className="col-sm-8">
+                        <p className="form-control-plaintext" id="jumlah_penyewa">
                           {formData.jumlah_penyewa || '-'} orang
                         </p>
                       </div>
                     </div>
-                    <div class="mb-3 row">
-                      <label for="pesan" class="col-sm-4 col-form-label fw-bold">Pesan</label>
-                      <div class="col-sm-8">
-                        <p class="form-control-plaintext" id="pesan">{formData.message || '-'}</p>
+                    <div className="mb-3 row">
+                      <label htmlFor="pesan" className="col-sm-4 col-form-label fw-bold">Pesan</label>
+                      <div className="col-sm-8">
+                        <p className="form-control-plaintext" id="pesan">{formData.message || '-'}</p>
+                      </div>
+                    </div>
+                    <div className="mb-3 row">
+                      <label htmlFor="total_harga" className='col-sm-4 col-form-label fw-bold'>Total Harga</label>
+                      <div className="col-sm-8" id='total_harga'>
+                          <p className='form-control-plaintext fw-bold text-success'>
+                            {formData.check_in && formData.check_out ? 
+                              (()=> {
+                                const days = Math.ceil(
+                                  (new Date(formData.check_out) - new Date(formData.check_in)) / (1000 * 60 * 60 * 24)
+                                )
+                                const total = room.price * days * (parseInt(formData.jumlah_penyewa) | 1)
+                                return `Rp ${total.toLocaleString()} (${days} hari)` 
+                              })() : 
+                              'Rp ' + room.price.toLocaleString() + '/bulan'
+                            }
+                          </p>
                       </div>
                     </div>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" onClick={handleCloseModal}>Close</button>
+                    <button type="button" className="btn btn-secondary" onClick={handleCloseModal}>Close</button>
                     <button type='button' className='btn btn-success' onClick={() => {
                       alert('Pemesanan berhasil dikirim!')
                       handleCloseModal()
