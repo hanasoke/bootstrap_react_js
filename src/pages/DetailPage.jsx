@@ -17,7 +17,7 @@ const DetailPage = () => {
     check_out: '',
     payment_method: '',
     jumlah_penyewa: '',
-    message: `saya tertarik dengan kamar ${roomData.rooms.find(r => r.name.toLowerCase() === roomName)?.name || 'ini'}. Apakahh masih tersedia?`
+    message: `saya tertarik dengan kamar ${roomData.rooms.find(r => r.name.toLowerCase() === roomName)?.name || 'ini'}. Apakah masih tersedia?`
   })
 
   // State untuk menyimpan error validasi 
@@ -263,7 +263,7 @@ const DetailPage = () => {
         <div className="container">
           <h2 className="text-center mb-5">Pesan Sekarang Juga</h2>
           <div className="row justify-content-center">
-            <div className="col-md-8">
+            <div className="col-md-10">
               <div className="card shadow">
                 <div className="card-body p-5">
                   <form onSubmit={handleSubmit}>
@@ -402,62 +402,75 @@ const DetailPage = () => {
                   </div>
                   <div class="modal-body">
                     <div class="mb-3 row">
-                      <label for="nama_kamar" class="col-sm-4 col-form-label fw-bold">Nama Pemesan</label>
+                      <label for="nama_kamar" class="col-sm-4 col-form-label fw-bold">Nama Kamar</label>
                       <div class="col-sm-8">
                         <p class="form-control-plaintext" id="nama_kamar">{room.name}</p>
                       </div>
                     </div>
                     <div class="mb-3 row">
-                      <label for="nama_penyewa" class="col-sm-4 col-form-label">Nama Pemesan</label>
+                      <label for="nama_pemesan" class="col-sm-4 col-form-label fw-bold">Nama Pemesan</label>
                       <div class="col-sm-8">
-                        <input type="text" readonly class="form-control-plaintext" id="nama_penyewa" value="#"/>
+                        <p class="form-control-plaintext" id="nama_pemesan">{formData.name || '-'}</p>
                       </div>
                     </div>
                     <div class="mb-3 row">
-                      <label for="email_pemesan" class="col-sm-4 col-form-label">Email Pemesan</label>
+                      <label for="email_pemesan" class="col-sm-4 col-form-label fw-bold">Email Pemesan</label>
                       <div class="col-sm-8">
-                        <input type="text" readonly class="form-control-plaintext" id="email_pemesan" value="#"/>
+                        <p class="form-control-plaintext" id="email_pemesan">{formData.email || '-'}</p>
                       </div>
                     </div>
                     <div class="mb-3 row">
-                      <label for="nomor_handphone" class="col-sm-4 col-form-label">Nomor Handphone</label>
+                      <label for="nomor_handphone" class="col-sm-4 col-form-label fw-bold">Nomor Handphone</label>
                       <div class="col-sm-8">
-                        <input type="text" readonly class="form-control-plaintext" id="nomor_handphone" value="#"/>
+                        <p class="form-control-plaintext" id="nomor_handphone">{formData.phone || '-'}</p>
                       </div>
                     </div>
                     <div class="mb-3 row">
-                      <label for="check_in" class="col-sm-4 col-form-label">Check In</label>
+                      <label for="check_in" class="col-sm-4 col-form-label fw-bold">Check In</label>
                       <div class="col-sm-8">
-                        <input type="text" readonly class="form-control-plaintext" id="check_in" value="#"/>
+                        <p class="form-control-plaintext" id="check_in">{formData.check_in || '-'}</p>
                       </div>
                     </div>
                     <div class="mb-3 row">
-                      <label for="check_out" class="col-sm-4 col-form-label">Check Out</label>
+                      <label for="check_out" class="col-sm-4 col-form-label fw-bold">Check Out</label>
                       <div class="col-sm-8">
-                        <input type="text" readonly class="form-control-plaintext" id="check_out" value="#"/>
+                        <p class="form-control-plaintext" id="check_out">{formData.check_out || '-'}</p>
                       </div>
                     </div>
                     <div class="mb-3 row">
-                      <label for="metode_pembayaran" class="col-sm-4 col-form-label">Metode Pembayaran</label>
+                      <label for="metode_pembayaran" class="col-sm-4 col-form-label fw-bold">Metode Pembayaran</label>
                       <div class="col-sm-8">
-                        <input type="text" readonly class="form-control-plaintext" id="metode_pembayaran" value="#"/>
+                        <p class="form-control-plaintext" id="metode_pembayaran">
+                          {
+                            formData.payment_method ? 
+                              formData.payment_method.split('_').map(word => 
+                                word.charAt(0).toUpperCase() + word.slice(1)
+                              ).join(' ') : '-'
+                          }
+                        </p>
                       </div>
                     </div>
                     <div class="mb-3 row">
-                      <label for="jumlah_penyewa" class="col-sm-4 col-form-label">Jumlah penyewa</label>
+                      <label for="jumlah_penyewa" class="col-sm-4 col-form-label fw-bold">Jumlah penyewa</label>
                       <div class="col-sm-8">
-                        <input type="text" readonly class="form-control-plaintext" id="jumlah_penyewa" value="#"/>
+                        <p class="form-control-plaintext" id="jumlah_penyewa">
+                          {formData.jumlah_penyewa || '-'} orang
+                        </p>
                       </div>
                     </div>
                     <div class="mb-3 row">
-                      <label for="pesan" class="col-sm-4 col-form-label">Pesan</label>
+                      <label for="pesan" class="col-sm-4 col-form-label fw-bold">Pesan</label>
                       <div class="col-sm-8">
-                        <input type="text" readonly class="form-control-plaintext" id="pesan" value="#"/>
+                        <p class="form-control-plaintext" id="pesan">{formData.message || '-'}</p>
                       </div>
                     </div>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" onClick={handleCloseModal}>Close</button>
+                    <button type='button' className='btn btn-success' onClick={() => {
+                      alert('Pemesanan berhasil dikirim!')
+                      handleCloseModal()
+                    }}>Konfirmasi Pemesanan</button>
                   </div>
                 </div>
               </div>
