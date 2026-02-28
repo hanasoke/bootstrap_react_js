@@ -195,41 +195,78 @@ const ContactPage = () => {
               aria-modal="true"
               role='dialog' 
             >
-              <div class="modal-dialog">
+              <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Detail Pesan Anda</h1>
+                  <div class="modal-header bg-success text-white">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                      <i className='bi bi-check-circle-fill me-2'></i>
+                      Detail Pesan Anda
+                    </h1>
                     <button 
                       type="button" 
-                      class="btn-close"
+                      class="btn-close btn-close-white"
                       onClick={handleCloseModal} 
                       aria-label="Close"
                     ></button>
                   </div>
                   <div class="modal-body p-4">
-                    <div className="mb-3 row">
-                      <label className="col-sm-4 col-form-label fw-bold">Nama</label>
-                      <div className="col-sm-8">
-                        <p className="form-control-plaintext">{formData.name || '-'}</p>
+                    {/* Informasi Pengirim */}
+                    <div className="mb-4">
+                      <h6 className="text-primary border-bottom pb-2">
+                        <i className="bi bi-person-fill me-2"></i>
+                        Informasi Pengirim 
+                      </h6>
+                      <div className="row mt-3">
+                        <div className="col-md-6">
+                          <div className="mb-3">
+                            <label className="fw-bold text-secondary">Nama</label>
+                            <p className="form-control-plaintext bg-light p-2 rounded">
+                              {formData.name || '-'}
+                            </p>
+                          </div>
+                        </div>
+                        <div className="col-md-6">
+                          <div className="mb-3">
+                            <label className="fw-bold text-secondary">Phone Number</label>
+                            <p className="form-control-plaintext bg-light p-2 rounded">
+                              {formData.phone || '-'}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="col-12">
+                          <div className="mb-3">
+                            <label className="fw-bold text-secondary">Alamat Email</label>
+                            <p className="form-control-plaintext bg-light p-2 rounded">
+                              {formData.email || '-'}
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <div className="mb-3 row">
-                      <label className="col-sm-4 col-form-label fw-bold">Email</label>
-                      <div className="col-sm-8">
-                        <p className="form-control-plaintext">{formData.email || '-'}</p>
+                    {/* Isi Pesan */}
+                    <div className="mb-4">
+                      <h6 className="text-primary border-bottom pb-2">
+                        <i className="bi bi-chat-dots-fill me-2"></i>
+                        Isi Pesan 
+                      </h6>
+                      <div className="mt-3">
+                        <div className="bg-light p-3 rounded">
+                          <p className="mb-0" style={{ whiteSpace: 'pre-wrap'}}>
+                            {formData.message || '-'}
+                          </p>
+                        </div>
+                        <small className='text-muted mt-2 d-block'>
+                          Jumlah karakter: {formData.message.length}/500
+                        </small>
                       </div>
                     </div>
-                    <div className="mb-3 row">
-                      <label className="col-sm-4 col-form-label fw-bold">Phone Number</label>
-                      <div className="col-sm-8">
-                        <p className="form-control-plaintext">{formData.phone || '-'}</p>
-                      </div>
-                    </div>
-                    <div className="mb-3 row">
-                      <label className="col-sm-4 col-form-label fw-bold">Mesage</label>
-                      <div className="col-sm-8">
-                        <p className="form-control-plaintext">{formData.message || '-'}</p>
-                      </div>
+
+                    {/* Informasi Tambahan */}
+                    <div className="alert alert-info">
+                      <i className="bi bi-info-circle-fill me-2"></i>
+                      Pesan anda akan segera kami balas melalui email atau nomor telpon yang Anda daftarkan
                     </div>
                   </div>
                   <div class="modal-footer">
@@ -237,7 +274,21 @@ const ContactPage = () => {
                       type="button" 
                       className="btn btn-secondary" 
                       onClick={handleCloseModal}
-                    >Close</button>
+                    >
+                      <i className="bi bi-x-circle me-2"></i> 
+                      Tutup
+                    </button>
+                    <button
+                      type='button'
+                      className='btn btn-success'
+                      onClick={() => {
+                        alert('Pesan Anda berhasil dikirim! Terima kasih telah menghubungi kami.')
+                        handleResetForm()
+                      }}
+                    >
+                      <i className="bi bi-send-fill me-2"></i>
+                      Kirim Pesan 
+                    </button>
                   </div>
                 </div>
               </div>
