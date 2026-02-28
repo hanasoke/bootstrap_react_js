@@ -81,7 +81,7 @@ const AboutUs = () => {
                         {employees.map((employee, index) => (
                             <div className="col-lg-4 col-md-6" key={index}>
                                 <div className="card team-card h-100 shadow-lg border-0 overflow-hidden">
-                                    <img src={`${employee.picture}`} className="team-img" alt="Ajeng Utami" />
+                                    <img src={`${employee.picture}`} className="team-img" alt={`${employee.name}`} />
                                     <div className='card-body p-4 text-center'>
                                         <h5 className="card-title fw-bold">{employee.name}</h5>
                                         <p className='text-muted mb-2'>{employee.role}</p>

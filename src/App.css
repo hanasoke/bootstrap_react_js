@@ -40,7 +40,8 @@ header {
 }
 
 .team-card {
-  border: none; transition: transform 0.3s;
+  border-radius: 15px 15px 0 0; 
+  transition: transform 0.3s;
 }
 
 .team-card:hover {

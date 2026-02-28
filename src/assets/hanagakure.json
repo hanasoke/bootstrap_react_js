@@ -17,7 +17,38 @@
             "name": "Ajeng Utami",
             "role": "UI / UX Designer",
             "picture": "/employees/ajeng_utami.jpg" 
+        },
+        {
+            "name": "Miku Nakano",
+            "role": "Digital Marketing",
+            "picture": "/employees/miku_nakano.jpg" 
+        },
+        {
+            "name": "Itsuki Nakano",
+            "role": "Customer Service",
+            "picture": "/employees/itsuki_nakano.jpg" 
+        },
+        {
+            "name": "Josep Stalin",
+            "role": "Cleaning Service",
+            "picture": "/employees/josep_stalin.jpg" 
+        },
+        {
+            "name": "Diego Diaz",
+            "role": "Accounting",
+            "picture": "/employees/diego_diaz.jpg" 
+        },
+        {
+            "name": "Nino Nakano",
+            "role": "Sales Consultant",
+            "picture": "/employees/nino_nakano.jpg" 
+        },
+        {
+            "name": "Nurul Febriati",
+            "role": "QA Engineer",
+            "picture": "/employees/nurul_febriati.jpg" 
         }
+
     ],
     "location": 
         "Bekasi"
