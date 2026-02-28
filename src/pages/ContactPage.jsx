@@ -57,6 +57,13 @@ const ContactPage = () => {
     }
 
     // Email Validation 
+    if(!formData.email.trim()) {
+      newErrors.email = 'Email harus diisi'
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'Format email tidak valid'
+    }
+    
+    // Message Validation 
     if(!formData.message.trim()) {
       newErrors.message = 'The Message must be filled'
     } else if(formData.message.length < 10) {
@@ -70,6 +77,30 @@ const ContactPage = () => {
   }
 
   // Handle submit errors
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    if (validateForm()) {
+      setShowModal(true)
+    }
+  }
+
+  // Handle close modal 
+  const handleCloseModal = () => {
+    setShowModal(false)
+  }
+
+  // Handle reset form 
+  const handleResetForm = () => {
+    setFormData({
+      name: '', 
+      phone: '',
+      email: '', 
+      message: ''
+    })
+    setErrors({})
+    handleCloseModal()
+  }
 
   return (
     <div>
@@ -83,74 +114,131 @@ const ContactPage = () => {
             <div className="col">
               <div className="card shadow">
                 <div className="card-body p-5">
-                  <form>
+                  <form onSubmit={handleSubmit}>
                     <div className="row">
                       <div className="col-md-6 mb-3">
-                        <label htmlFor="name" className="form-label">Nama</label>
-                        <input type="text" className="form-control" id="name" />
+                        <label htmlFor="name" className="form-label">Name <span className='text-danger'>*</span></label>
+                        <input 
+                          type="text" 
+                          className={`form-control ${errors.name ? 'is-invalid' : ''}`} 
+                          id="name" 
+                          placeholder='Masukkan nama lengkap'
+                          value={formData.name}
+                          onChange={handleInputChange}  
+                        />
+                        {errors.name && (
+                          <div className='invalid-feedback'>{errors.name}</div>
+                        )}
                       </div>
                       <div className="col-md-6 mb-3">
-                        <label htmlFor="phone" className="form-label">Phone Number</label>
-                        <input type="tel" className="form-control" id="phone" />
+                        <label htmlFor="phone" className="form-label">Phone Number <span className="text-danger">*</span></label>
+                        <input 
+                          type="tel" 
+                          className={`form-control ${errors.phone ? `is-invalid` : ''}`} 
+                          id="phone" 
+                          placeholder='Masukkan nomor telpon'
+                          value={formData.phone}
+                          onChange={handleInputChange}  
+                        />
+                        {errors.phone && (
+                          <div className='invalid-feedback'>{errors.phone}</div>
+                        )}
                       </div>
                     </div>
                     <div className="row">
                       <div className="col mb-3">
-                        <label htmlFor="email" className="form-label">Email</label>
-                        <input type="text" className="form-control" id="email" />
+                        <label htmlFor="email" className="form-label">Email <span className="text-danger">*</span></label>
+                        <input 
+                          type="email" 
+                          className={`form-control ${errors.email ? 'is-invalid' : ''}`} 
+                          id="email" 
+                          placeholder='Masukkan alamat email'
+                          value={formData.email}
+                          onChange={handleInputChange}
+                        />
+                        {errors.email && (
+                          <div className="invalid-feedback">{errors.email}</div>
+                        )}
                       </div>
                     </div>
                     <div className="mb-3">
-                      <label htmlFor="message" className="form-label">Message</label>
-                      <textarea className="form-control" id="message" rows="4"></textarea>
+                      <label htmlFor="message" className="form-label">Message <span className="text-danger">*</span></label>
+                      <textarea 
+                        className={`form-control ${errors.message ? 'is-invalid' : ''}`} 
+                        id="message" 
+                        rows="4"
+                        placeholder='Tulis pesan Anda disini'
+                        value={formData.message}
+                        onChange={handleInputChange}
+                      ></textarea>
+                      {errors.message && (
+                        <div className="invalid-feedback">{errors.message}</div>
+                      )}
+                      <small className="text-muted">
+                        Karakter: {formData.message.length}/500
+                      </small>
                     </div>
-                    <button type="button" className="btn btn-success w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">Kirim Pesan</button>
+                    <button type="submit" className="btn btn-success w-100">Kirim Pesan</button>
                   </form>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">Detail Pesan</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <div className="mb-3 row">
-                    <label className="col-sm-4 col-form-label fw-bold">Nama</label>
-                    <div className="col-sm-8">
-                      <p className="form-control-plaintext">Saitama</p>
+          {/* Modal */}
+          {showModal && (
+            <div 
+              class="modal fade show" 
+              id="exampleModal" 
+              tabindex="-1" 
+              style={{ display: 'block', backgroundColor: 'rgba(0,0,0,0.5)' }} 
+              aria-modal="true"
+              role='dialog' 
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Detail Pesan Anda</h1>
+                    <button 
+                      type="button" 
+                      class="btn-close"
+                      onClick={handleCloseModal} 
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body p-4">
+                    <div className="mb-3 row">
+                      <label className="col-sm-4 col-form-label fw-bold">Nama</label>
+                      <div className="col-sm-8">
+                        <p className="form-control-plaintext">{formData.name || '-'}</p>
+                      </div>
+                    </div>
+                    <div className="mb-3 row">
+                      <label className="col-sm-4 col-form-label fw-bold">Email</label>
+                      <div className="col-sm-8">
+                        <p className="form-control-plaintext">saitama@gmail.com</p>
+                      </div>
+                    </div>
+                    <div className="mb-3 row">
+                      <label className="col-sm-4 col-form-label fw-bold">Phone Number</label>
+                      <div className="col-sm-8">
+                        <p className="form-control-plaintext">087322132321</p>
+                      </div>
+                    </div>
+                    <div className="mb-3 row">
+                      <label className="col-sm-4 col-form-label fw-bold">Mesage</label>
+                      <div className="col-sm-8">
+                        <p className="form-control-plaintext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque perspiciatis provident, possimus modi at accusamus temporibus ex magni voluptatem, iusto cumque veritatis officia. Amet pariatur ipsam sunt in vero distinctio!</p>
+                      </div>
                     </div>
                   </div>
-                  <div className="mb-3 row">
-                    <label className="col-sm-4 col-form-label fw-bold">Email</label>
-                    <div className="col-sm-8">
-                      <p className="form-control-plaintext">saitama@gmail.com</p>
-                    </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   </div>
-                  <div className="mb-3 row">
-                    <label className="col-sm-4 col-form-label fw-bold">Phone Number</label>
-                    <div className="col-sm-8">
-                      <p className="form-control-plaintext">087322132321</p>
-                    </div>
-                  </div>
-                  <div className="mb-3 row">
-                    <label className="col-sm-4 col-form-label fw-bold">Mesage</label>
-                    <div className="col-sm-8">
-                      <p className="form-control-plaintext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque perspiciatis provident, possimus modi at accusamus temporibus ex magni voluptatem, iusto cumque veritatis officia. Amet pariatur ipsam sunt in vero distinctio!</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
               </div>
             </div>
-          </div>
-
+          )}
 
           <div className="row mt-4">
             <div className="col-md-6">
