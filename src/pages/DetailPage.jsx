@@ -321,7 +321,7 @@ const DetailPage = () => {
                         <label htmlFor="check_out" className="form-label">Check Out <span className='text-danger'>*</span></label>
                         <input 
                           type="date" 
-                          className="form-control" 
+                          className={`form-control ${errors.check_out ? 'is-invalid' : ''}`} 
                           id="check_out"
                           value={formData.check_out}
                           onChange={handleInputChange}
@@ -348,7 +348,7 @@ const DetailPage = () => {
                         {errors.payment_method && <div className='invalid-feedback'>{errors.payment_method}</div> }
                       </div>
                       <div className="col-md-6 mb-3">
-                        <label htmlFor="phone" className="form-label">Jumlah Penyewa</label>
+                        <label htmlFor="jumlah_penyewa" className="form-label">Jumlah Penyewa</label>
                         <select 
                           className={`form-select ${errors.jumlah_penyewa ? 'is-invalid' : ''}`}
                           id="jumlah_penyewa"
