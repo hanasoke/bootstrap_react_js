@@ -1,9 +1,75 @@
-import React from 'react' 
+import React, { useState } from 'react' 
 import Navbar from '../components/Navbar'
 import roomData from '../assets/hanagakure.json'
 
 const ContactPage = () => {
   const currentYear = new Date().getFullYear()
+
+  // State untuk menyimpan data form 
+  const [formData, setFormData] = useState({
+    name: '', 
+    phone: '',
+    email: '',
+    message: '',
+  })
+
+  // state untuk menyimpan error validasi 
+  const [errors, setErrors] = useState({})
+
+  // State untuk menyimpan error validasi 
+  const [showModal, setShowModal] = useState(false)
+
+  // Handle input change 
+  const handleInputChange = (e) => {
+    const {id, value } = e.target 
+    setFormData({
+      ...formData, 
+      [id]: value 
+    })
+
+    // Hapus error untuk field yang sedang diisi 
+    if(errors[id]) {
+      setErrors({
+        ...errors, 
+        [id]: null 
+      })
+    }
+  }
+
+  // Validasi form 
+  const validateForm = () => {
+    const newErrors = {}
+
+    // Name Validation
+    if(!formData.name.trim()) {
+      newErrors.name = 'Name must be filled'
+    } else if (formData.name.length < 3) {
+      newErrors.name = '3 Character Minimum Name'
+    } else if(formData.name.length > 50) {
+      newErrors.name = '3 Character Maximum Name'
+    }
+
+    // Phone Number Validation
+    if (!formData.phone.trim()) {
+      newErrors.phone = 'Phone Number must be filled'
+    } else if(!/^[0-9]{10,13}$/.test(formData.phone)) {
+      newErrors.phone = 'Phone Number must be 10 - 13 Digits'
+    }
+
+    // Email Validation 
+    if(!formData.message.trim()) {
+      newErrors.message = 'The Message must be filled'
+    } else if(formData.message.length < 10) {
+      newErrors.message = '10 Characters Minimum Message'
+    } else if(formData.message.length > 500) {
+      newErrors.message = '500 Characters Maximal Message'
+    }
+
+    setErrors(newErrors)
+    return Object.keys(newErrors).length === 0 
+  }
+
+  // Handle submit errors
 
   return (
     <div>
@@ -24,7 +90,7 @@ const ContactPage = () => {
                         <input type="text" className="form-control" id="name" />
                       </div>
                       <div className="col-md-6 mb-3">
-                        <label htmlFor="phone" className="form-label">No. Telepon</label>
+                        <label htmlFor="phone" className="form-label">Phone Number</label>
                         <input type="tel" className="form-control" id="phone" />
                       </div>
                     </div>
@@ -35,7 +101,7 @@ const ContactPage = () => {
                       </div>
                     </div>
                     <div className="mb-3">
-                      <label htmlFor="message" className="form-label">Pesan</label>
+                      <label htmlFor="message" className="form-label">Message</label>
                       <textarea className="form-control" id="message" rows="4"></textarea>
                     </div>
                     <button type="button" className="btn btn-success w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">Kirim Pesan</button>
