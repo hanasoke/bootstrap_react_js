@@ -23,8 +23,7 @@ const HomePage = () => {
             Tempat Ngekost Nomor 1 Di {roomData.location}
           </p>
           <div className="mt-4">
-            <button className="btn btn-light btn-lg me-2">Mulai</button>
-            <button className="btn btn-outline-light btn-lg">Pelajari</button>
+            <a className="btn btn-outline-light btn-lg" href='#rooms'>Jelajahi</a>
           </div>
         </div>
       </header>
@@ -79,7 +78,7 @@ const HomePage = () => {
       </section>
 
       {/* Content Section */}
-      <section className="py-5 bg-light">
+      <section className="py-5 bg-light" id='rooms'>
         <div className="container">
           <div className="row text-center mb-5">
             <h1 class="text-uppercase">Daftar Kamar yang tersedia</h1>

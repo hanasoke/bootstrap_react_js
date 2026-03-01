@@ -111,7 +111,7 @@ const ContactPage = () => {
         <div className="container">
           <h2 className="text-center mb-5">Hubungi Kami</h2>
           <div className="row justify-content-center">
-            <div className="col">
+            <div className="col-md-8">
               <div className="card shadow">
                 <div className="card-body p-5">
                   <form onSubmit={handleSubmit}>
@@ -178,6 +178,14 @@ const ContactPage = () => {
                         Karakter: {formData.message.length}/500
                       </small>
                     </div>
+
+                    {/* Informasi field wajib diisi */}
+                    <div className="mb-3">
+                      <div className="text-muted">
+                        <span className="text-danger">*</span> Field wajib diisi 
+                      </div>
+                    </div>
+
                     <button type="submit" className="btn btn-success w-100">Kirim Pesan</button>
                   </form>
                 </div>
